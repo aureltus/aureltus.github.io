@@ -47,6 +47,7 @@ figure {
 	border: 3px grey inset ;
 	box-shadow: 6px 6px 4px black;
 	background-image: url("images/pic08.jpg");
+	text-align: center;
 }
 
 article {
@@ -157,11 +158,6 @@ a:visited {
 		justify-content: center;
 		margin-top: 2%;
 		margin-left: 5%;
-	}
-
-	figure {
-
-		text-align: center;
 	}
 
 	article {
