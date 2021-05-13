@@ -11,26 +11,27 @@
     font-style: normal;
 }
 
-body{
+body {
 	
 	background-color:grey;
 	background-image: url("images/wat.jpg");
 }
 
-#bloc_page{
+#bloc_page {
 
 	display: flex;
 	justify-content: center;
 }
 
-#titre_section{
+#titre_section {
 
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 }
 
-nav{
+nav {
+
 display: flex;
 width: 250px;
 flex-direction: column;
@@ -38,24 +39,26 @@ margin-right: 3%;
 height: 500px;
 background-image: url("images/lodyas.png");
 border-radius: 30px;
+align-items:center;
 }
 
-figure{
+figure {
 
 	border: 3px grey inset ;
 	box-shadow: 6px 6px 4px black;
 	background-image: url("images/pic08.jpg");
 }
 
-article{
+article {
 
     display: inline-block;
     vertical-align: top;
     width: 75%;
     margin-right: 2%;
+    margin-left: 2%;
 }
 
-section{
+section {
 
 	display: flex;
 	flex-direction: row;
@@ -64,23 +67,24 @@ section{
     background-image: url('images/pic08.jpg');
     background: rgba(0,0,0,0.8);
 }
-#liens_titre{
+
+#liens_titre {
 
 	color: black;
 }
 
-#liens_titre:hover{
+#liens_titre:hover {
 
 	color: white;
 }
 
-.lien:hover{
+.lien:hover {
 
 	color: white;
 
 }
 
-h1{
+h1 {
 
 	color: black;
 	font-family: after_shokregular,"Arial Black",Arial,Verdana,sans-serif;
@@ -93,57 +97,58 @@ h1{
 	width: 90%;
 }
 
-h1:hover{
+h1:hover {
 
 color: rgb(145,25,48);
 }
 
-h2{
+h2 {
 
 	color: #535462;
 }
 
-h2:hover{
+h2:hover {
 
 	color: #0f18a3;
 }
 
-ul{
+ul {
 
 	color: #858699;
 	list-style-position: inside;
 }
 
-ul:hover{
+ul:hover {
 
 	font-style: oblique;
 }
 
-li{
+li {
 
 	list-style-type: square;
 }
 
-a:visited{
+a:visited {
+
 	color: red;
 }
 
-@media all and (max-width: 1024px)
-{
-    #bloc_page{
+@media all and (max-width: 1024px) {
+
+    #bloc_page {
 
         width: auto;
         flex-direction: column-reverse;
         justify-content: center;
+        align-items:center;
     }
 
-    section{
+    section {
 
-		flex-direction: column;
-    	
+		flex-direction: column;  	
 	}
 
-	nav{
+	nav {
 
 		width: 90%;
 		flex-direction: row;
@@ -152,23 +157,30 @@ a:visited{
 		justify-content: center;
 		margin-top: 2%;
 		margin-left: 5%;
-
 	}
 
-	figure{
-		display: none;
+	figure {
 
+		text-align: center;
 	}
 
-	article{
+	article {
 
     	width: 80%;
     	margin-left: 5%;
     	margin-right: 0%;
 	}
 
-	#titre_section{
+	#titre_section {
 
-		margin-left: 10%;
+		align-items:center;
 	}
+
+	#nav_flex {
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
 }
