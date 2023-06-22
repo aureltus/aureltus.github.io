@@ -24,5 +24,7 @@ temp5.innerText = Math.floor(temp)
      // fetchData()
       function test (){ fetch("conf.json")
                        .then(r => r.text())
-                       .then(body => console.log(body))}
+                       .then(body => 
+                           const villed = body.ville;
+                           console.log(villed))}
       test()
