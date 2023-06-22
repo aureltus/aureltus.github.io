@@ -7,6 +7,17 @@ function fetchData() {
       
   }
   
+  function fetchVille() {
+    fetch("conf.json")
+      .then((res) => res.json())
+      .then((result) => villeDetails(result))
+      
+  }
+
+  function villeDetails(info) {
+    const city = info.ville;
+      console.log(city)
+}
   function weatherDetails(info) {
 
       const city = info.name;
@@ -22,7 +33,7 @@ let temp5 = document.querySelector(".deg")
 temp5.innerText = Math.floor(temp)
 }
      // fetchData()
-      function test (){ fetch("conf.json")
-                       .then(r => r.text())
-                       .then(body => console.log(body))}
-      test()
+     function test (){ fetch("conf.json")
+     .then(r => r.text())
+     .then(body => console.log(body))}
+      fetchVille()
