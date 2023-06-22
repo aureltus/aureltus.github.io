@@ -23,6 +23,6 @@ temp5.innerText = Math.floor(temp)
 }
      // fetchData()
       function test (){ fetch("conf.json")
-                       .then( => r.text())
+                       .then(r => r.text())
                        .then(body => console.log(body))
       test()
