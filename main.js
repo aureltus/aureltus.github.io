@@ -13,7 +13,7 @@ function fetchData() {
       const country = info.sys.country;
       const { description, id , icon} = info.weather[0];
       const { temp, feels_like, humidity , pressure } = info.main;
-      const {speed} = info.wind;
+      const speed = info.wind;
         console.log("vitesse vent: ",speed)
       console.log("temperature", temp)
     console.log("description: ", description ,"id: ",id,"feels like: ", feels_like)
@@ -25,4 +25,6 @@ temp5.innerText = Math.floor(temp)
       const reponse = await fetch("conf.json");
       const pieces = await reponse.json();
       const villeg = pieces.ville
+      const {main,description} = pieces.weather[0];
+      console.log(main , description)
       console.log(villeg)
