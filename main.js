@@ -22,6 +22,7 @@ let temp5 = document.querySelector(".deg")
 temp5.innerText = Math.floor(temp)
 }
       fetchData()
-      function ConfJson() {const testConfig = fetch("conf.json")
-      console.log(testConfig.ville)}
+      function ConfJson() {
+        fetch("conf.json")
+        .then((result) => console.log("ville"))}
       ConfJson()
