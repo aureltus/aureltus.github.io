@@ -21,10 +21,12 @@ console.log("pression: ",pressure,"ville: ", city , country, "icon: ",icon)
 let temp5 = document.querySelector(".deg")
 temp5.innerText = Math.floor(temp)
 }
-      fetchData()
-      const reponse = await fetch("conf.json");
-      const pieces = await reponse.json();
+     // fetchData()
+      function test (){const reponse = fetch("conf.json");
+      const pieces = reponse.json();
       const villeg = pieces.ville
       const {main,description} = pieces.weather[0];
-      console.log(main , description)
-      console.log(villeg)
+      console.log(main , description);
+      console.log(ville)
+      console.log(villeg)}
+      test()
