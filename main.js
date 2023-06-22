@@ -23,10 +23,8 @@ temp5.innerText = Math.floor(temp)
 }
      // fetchData()
       function test (){const reponse = fetch("conf.json");
-      const pieces = reponse.json();
-      const villeg = pieces.ville
-      const {main,description} = pieces.weather[0];
+      const villeg = reponse.ville
+      const {main,description} = reponse.weather[0];
       console.log(main , description);
-      console.log(ville)
       console.log(villeg)}
       test()
