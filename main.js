@@ -22,7 +22,7 @@ let temp5 = document.querySelector(".deg")
 temp5.innerText = Math.floor(temp)
 }
      // fetchData()
-      function test (){const reponse = fetch("conf.json");
-      const villeg = reponse.ville
-      console.log(villeg)}
+      function test (){ fetch("conf.json")
+                       .then( => r.text())
+                       .then(body => console.log(body))
       test()
