@@ -22,13 +22,6 @@ let temp5 = document.querySelector(".deg")
 temp5.innerText = Math.floor(temp)
 }
       fetchData()
-
-      //getJSON('conf.json', function(donnees) {
-        console.log("ok")
-       // console.debug(donnees);
-      //  $('#r').html('<p><b>Nom</b> : ' + donnees.nom + '</p>');
-      //});
       function ConfJson() {const testConfig = fetch("conf.json")
-      mode:"no-cors"
-      console.log(testConfig)}
+      console.log(testConfig.ville)}
       ConfJson()
