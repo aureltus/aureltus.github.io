@@ -1,15 +1,3 @@
 {
-    "coord": {
-      "lon": 10.99,
-      "lat": 44.34
-    },
-    "weather": [
-      {
-        "id": 501,
-        "main": "Rain",
-        "description": "moderate rain",
-        "icon": "10d"
-      }
-    ],
     "ville":"bordeaux"
     }
