@@ -24,7 +24,7 @@ temp5.innerText = Math.floor(temp)
      // fetchData()
       function test (){const reponse = fetch("conf.json");
       const villeg = reponse.ville
-      //const {main,description} = reponse.weather[0];
+      const {main,description} = reponse.weather;
       console.log(main , description);
       console.log(villeg)}
       test()
