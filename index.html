@@ -3,59 +3,71 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
-    <!-- <link rel="conf" href="conf.json" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="main.js">defer</script>
+    <script src="scripts/ville.js">defer</script>
+    <script src="scripts/main.js">defer</script>
     <title>meteo</title>
   </head>
     <!-- main content -->
     <body>
-    <div class="wrapper">
-      <header><i class="bx bx-left-arrow-alt"></i>Weather App</header>
-      <!-- <section class="input-part">
-        <p class="info-txt"></p>
-        <div class="content">
-         <input
-            type="text"
-            spellcheck="false"
-            placeholder="Enter City Name"
-            required
-          />
-          <div class="separator"></div>
-          <button>Location auto-detect</button>
-        </div> 
-      </section> -->
-      <section class="weather-part">
-        <img src="" alt="Weather Icon" />
-        <div class="temp">
-          <span class="numb">_</span>
-          <span class="deg">°</span>C
-        </div>
-        <div class="weather">_ _</div>
-        <div class="location">
-          <i class="bx bx-map"></i>
-          <span>_, _</span>
-        </div>
-        <div class="bottom-details">
-          <div class="column feels">
-            <i class="bx bxs-thermometer"></i>
-            <div class="details">
-              <div class="temp">
-                <span class="numb-2">_</span>
-                <span class="deg">°</span>C
+      <div class="wrapper">
+        <header>Météo TBM</header>
+        <section class="block">
+        <section class="weather-part">
+          <img src="" id="weatherIcon" />
+          <div class="temp">
+            <span class="numb">_</span>
+            <span class="deg">°</span>C
+          </div>
+          <div class="weather">_ _</div>
+          <div class="location">
+            <span>_, _</span>
+          </div>
+        </section>
+        <section class="test2">
+            <div class="column_feels">
+              <div class="details">
+                <img id="aze" src="fever-symptom-icon.svg">
+                <div class="temp-2">
+                  <span class="numb-2">_</span>
+                  <span class="deg-2">°</span>C
+                </div>
+                <p>ressentie</p>
               </div>
-              <p>Feels like</p>
             </div>
-          </div>
-          <div class="column humidity">
-            <i class="bx bxs-droplet-half"></i>
-            <div class="details">
-              <span>_</span>
-              <p>Humidity</p>
+            <div class="column_pression">
+              <div class="details">
+                <img id="aze" src="compression-icon.svg">
+                <span class="pres">_</span> hPa
+                <p>pression</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </body>
+            <div class="column_humidity">
+              <div class="details">
+                <img id="aze" src="water-drop-teardrop-icon.svg">
+                <span class="test">_</span>
+                <p>humidité</p>
+              </div>
+            </div>
+        <!-- </section>
+        <section class="test3"> -->
+            <div class="column_soleil">
+              <div class="details">
+                <img id="aze" src="sunrise-icon.svg">
+                <span class="sun">_ / _</span>
+                <p>lever/coucher</p>
+              </div>
+            </div>
+            <div class="column_vent">
+              <div class="details">
+                <img id="aze" src="wind-icon.svg">
+                <span class="vent2">_ m/s</span>
+                <img src="fbas.svg" id="directionVent" />
+                <p>vent</p>
+              </div>
+            </div>
+        <!-- </section> -->
+        </section>
+        </section>
+      </div>
+    </body>
 </html>
