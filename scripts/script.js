@@ -1,4 +1,4 @@
-function fetchData() {
+function fetchData(api) {
 
     fetch(api)
       .then((res) => res.json())
@@ -84,5 +84,5 @@ function wallpaper(id) {
     }
     fond.style.backgroundRepeat = "no-repeat";
     fond.style.backgroundSize = "cover";
-    
+
       }
