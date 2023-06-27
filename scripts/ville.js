@@ -9,7 +9,7 @@
   function villeJson(info) {
     const city = info.ville;
       console.log(city)
-    return `${city}`
+    return info.ville
 }
 
      //function test (){ fetch("conf.json")
