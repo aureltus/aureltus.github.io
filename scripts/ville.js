@@ -2,7 +2,7 @@
   function fetchVille() {
     fetch("../conf.json")
       .then((res) => res.json())
-      .then((result) => villeJson(result))
+      .then((result) => result.ville)
       
   }
 // recuperation de la ville dans le json
