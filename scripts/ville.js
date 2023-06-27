@@ -2,14 +2,13 @@
   function fetchVille() {
     fetch("conf.json")
       .then((res) => res.json())
-      .then((result) => result.ville)
+      .then((result) => villrJson(result))
       
   }
 // recuperation de la ville dans le json
   function villeJson(info) {
-    const city = info.ville;
+  const city = info.ville;
       console.log(city)
-    return info.ville
 }
 
      //function test (){ fetch("conf.json")
