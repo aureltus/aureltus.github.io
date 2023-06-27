@@ -2,7 +2,7 @@
   function fetchCity() {
     fetch("conf.json")
       .then((res) => res.json())
-      .then((result) => villeJson(result))
+      .then((result) => cityJson(result))
   }
       function fetchCity2() {
         fetch("https://aureltus.github.io/conf.json")
