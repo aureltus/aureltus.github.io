@@ -3,7 +3,7 @@ let city = "paris"
 let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=fr`;
 
 city = fetchVille()
-console.log(test)
+console.log(city)
 
 fetchData();
 
