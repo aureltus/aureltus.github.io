@@ -4,70 +4,50 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
     <script src="scripts/ville.js">defer</script>
+    <script src="scripts/script.js">defer</script>
     <script src="scripts/main.js">defer</script>
     <title>meteo</title>
   </head>
     <!-- main content -->
-    <body>
-      <div class="wrapper">
-        <header>Météo TBM</header>
-        <section class="block">
-        <section class="weather-part">
+  <body>
+    <div class="wrapper">
+      <header>Météo TBM</header>
+      <section class="block">
+        <section class="weather-part1">
           <img src="" id="weatherIcon" />
-          <div class="temp">
-            <span class="numb">_</span>
-            <span class="deg">°</span>C
+          <span class="temp">_ °C</span>
+          <span class="weather">_ _</span>
+          <span class="location">_, _</span>
+        </section>
+        <section class="weather-part2">
+          <div class="line_feels">
+            <img class="icon" src="icon/feels_like-icon.svg">
+            <span class="temp-2">_°C</span>
+            <p>ressentie</p>
           </div>
-          <div class="weather">_ _</div>
-          <div class="location">
-            <span>_, _</span>
+          <div class="line_pressure">
+            <img class="icon" src="icon/pressure-icon.svg">
+            <span class="pressure">_ hPa</span>
+            <p>pression</p>
+          </div>
+          <div class="line_humidity">
+            <img class="icon" src="icon/humidity-icon.svg">
+            <span class="humidity">_</span>
+            <p>humidité</p>
+          </div>
+          <div class="line_sun">
+            <img class="icon" src="icon/sunrise-icon.svg">
+            <span class="sun">_ / _</span>
+            <p>lever/coucher</p>
+          </div>
+          <div class="line_wind">
+            <img class="icon" src="icon/wind-icon.svg">
+            <span class="wind">_ m/s</span>
+            <img src="icon/arrow.svg" id="windArrow" />
+            <p>vent</p>
           </div>
         </section>
-        <section class="test2">
-            <div class="column_feels">
-              <div class="details">
-                <img id="aze" src="fever-symptom-icon.svg">
-                <div class="temp-2">
-                  <span class="numb-2">_</span>
-                  <span class="deg-2">°</span>C
-                </div>
-                <p>ressentie</p>
-              </div>
-            </div>
-            <div class="column_pression">
-              <div class="details">
-                <img id="aze" src="compression-icon.svg">
-                <span class="pres">_</span> hPa
-                <p>pression</p>
-              </div>
-            </div>
-            <div class="column_humidity">
-              <div class="details">
-                <img id="aze" src="water-drop-teardrop-icon.svg">
-                <span class="test">_</span>
-                <p>humidité</p>
-              </div>
-            </div>
-        <!-- </section>
-        <section class="test3"> -->
-            <div class="column_soleil">
-              <div class="details">
-                <img id="aze" src="sunrise-icon.svg">
-                <span class="sun">_ / _</span>
-                <p>lever/coucher</p>
-              </div>
-            </div>
-            <div class="column_vent">
-              <div class="details">
-                <img id="aze" src="wind-icon.svg">
-                <span class="vent2">_ m/s</span>
-                <img src="fbas.svg" id="directionVent" />
-                <p>vent</p>
-              </div>
-            </div>
-        <!-- </section> -->
-        </section>
-        </section>
-      </div>
-    </body>
+      </section>
+    </div>
+  </body>
 </html>
