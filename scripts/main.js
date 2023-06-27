@@ -7,4 +7,4 @@ fetchVille()
 
 //fetchData();
 
-setInterval(() => {fetchData()}, 100000);
+setInterval(() => {fetchData()}, 1000000);
