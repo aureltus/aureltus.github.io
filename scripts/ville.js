@@ -1,6 +1,6 @@
   // récuperation conf.json 
   function fetchVille() {
-    fetch("../conf.json")
+    fetch("conf.json")
       .then((res) => res.json())
       .then((result) => result.ville)
       
