@@ -5,6 +5,6 @@ fetchVille2()
 //console.log(city)
 //let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=fr`;
 
-fetchData();
+//fetchData();
 
 setInterval(() => {fetchData()}, 3600000);
