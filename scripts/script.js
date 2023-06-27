@@ -1,4 +1,4 @@
-function fetchData(api) {
+function fetchData() {
 
     fetch(api)
       .then((res) => res.json())
