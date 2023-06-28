@@ -62,7 +62,6 @@ function convertirDate(num){
     let date = new Date(unix*1000);
     let heures = date.getHours();
     let minutes = date.getMinutes();
-    console.log(`${heures}:${minutes}`);
     return `${heures}:${minutes}`;
 }
 //wallpaper en fonction de l'id climat recu, 
@@ -111,7 +110,6 @@ function ombre (sunrise,sunset){
 function shadow(i) {
 
     const pixel = (i-55)
-    console.log("valeur A= ",i ,"valeur de B= ",pixel)
     const weatherIcon = document.getElementById("weatherIcon");
     weatherIcon.style.boxShadow = `${pixel}px 25px 8px 5px #16161780`;
 }
