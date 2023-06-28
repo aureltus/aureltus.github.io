@@ -112,8 +112,27 @@ p{color: lightslategray;}
     margin-left: 1em;
 }
 
+/* @media screen and (orientation: portrait){
+    header {width: 10em;}
 
-@media (max-width: 720px) {
+    .weather-part1 {
+        width: auto;
+        height: auto;
+    }
+        
+    .weather-part2 {width: 10em;}
+
+    #windArrow {margin-right: 30%;}
+
+    #weatherIcon{
+        height: 6em;
+        margin-top: 0.5em;
+    }
+  } */
+
+
+
+@media screen and (max-width: 720px) {
 
     .location{margin-bottom: none;}
 
@@ -138,7 +157,7 @@ p{color: lightslategray;}
 }
 
 
-@media (max-width: 580px),(orientation: portrait){
+@media screen and (max-width: 580px){
 
     header {width: 13.8em;}
 
@@ -166,7 +185,7 @@ p{color: lightslategray;}
   }
 
 
-  @media (max-width: 340px) {
+  @media screen and (max-width: 340px),(orientation: portrait) {
 
     header {width: 10em;}
 
