@@ -160,7 +160,7 @@ p{color: lightslategray;}
 
 @media screen and (max-width: 580px){
 
-    header {width: 13.8em;}
+    /* header {width: 13.8em;} */
 
     .block {
         display: flex;
@@ -186,9 +186,9 @@ p{color: lightslategray;}
   }
 
 
-  @media screen and (max-width: 340px){
+  @media screen and (max-width: 340px) {
 
-    header {width: 10em;}
+    /* header {width: 10em;} */
 
     .weather-part1 {
         width: auto;
@@ -205,9 +205,9 @@ p{color: lightslategray;}
     }
   }
 
-  @media screen and (orientation: portrait){p{background-color: blueviolet;}
+   @media screen and (orientation: portrait){p{background-color: blueviolet;}
 
-  header {width: 13.8em;}
+  
 
   .block {
       display: flex;
@@ -230,4 +230,21 @@ p{color: lightslategray;}
   .weather, .temp, .location{font-size: 1.5em;}
   
   .location{margin-bottom: 1em;}
+
+
+header {width: 10em;}
+
+.weather-part1 {
+    width: auto;
+    height: auto;
+}
+    
+.weather-part2 {width: 10em;}
+
+#windArrow {margin-right: 30%;}
+
+#weatherIcon{
+    height: 6em;
+    margin-top: 0.5em;
+}
 }
