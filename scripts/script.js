@@ -2,9 +2,10 @@
 function fetchData() {
 
     fetch(api)
-      .then((res) => res.json())
-      .then((result) => weatherDetails(result))
-      .catch(() => {textError("Problème avec la requête api")});
+        .catch(() => {textError("Problème avec la requête api")})
+        .then((res) => res.json())
+        .then((result) => weatherDetails(result))
+      
 }
 //traitement des donnees et affectation
 function weatherDetails(info) {
@@ -19,30 +20,39 @@ function weatherDetails(info) {
     const {speed, deg} = info.wind;
 
 //affichage des constantes sur la page web 
+    
     //icone
     const iconEdit = document.getElementById("weatherIcon");
     iconEdit.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+    
     //temperature
     const tempEdit = document.querySelector(".temp");
     tempEdit.innerText = `${Math.floor(temp)} °C`;
+    
     //descrition temps
     const descriptionEdit = document.querySelector(".weather");
     descriptionEdit.innerText = description;
+    
     //localisation
     const cityEdit = document.querySelector(".location");
     cityEdit.innerText = `${city}, ${country}`;
+    
     //temperature ressentie
     const feels_likeEdit = document.querySelector(".temp-2");
     feels_likeEdit.innerText = `${Math.floor(feels_like)} °C`;
+   
     //pression
     const pressureEdit = document.querySelector(".pressure");
     pressureEdit.innerText = `${pressure} hPa`;
+    
     //humidite
     const humidityEdit = document.querySelector(".humidity") ;
     humidityEdit.innerText = `${humidity} %`;
+    
     //lever et coucher de soleil
     const sunEdit = document.querySelector(".sun");
     sunEdit.innerText = `${convertirDate(sunrise)} / ${convertirDate(sunset)}`;
+    
     //vitesse du vent et fleche pour le sens du vent
     const windEdit = document.querySelector(".wind");
     windEdit.innerText = `${speed} m/s`;
@@ -51,8 +61,7 @@ function weatherDetails(info) {
     windArrow.style.visibility = "visible";
 
     //lancement de la fonction avec le parametre id
-    //wallpaper(id)
-    
+    wallpaper(id)
     ombre(sunrise,sunset)
 }
 //convertion de sunrise et sunset en date, puis recuperation de l'heure uniquement
@@ -67,7 +76,7 @@ function convertirDate(num){
 //wallpaper en fonction de l'id climat recu, 
 function wallpaper(id) {
 
-    const wallpaper = document.querySelector("body")
+    const wallpaper = document.querySelector("body");
     if (id == 800) {
         wallpaper.style.background = "url(images/clear.jpg)" ;
     } else if (id >= 200 && id <= 232) {
@@ -88,16 +97,15 @@ function wallpaper(id) {
 
 function textError(message){
 
-    const error = document.querySelector(".error")
-    error.style.display = "block"
-    error.innerText = message
+    const error = document.querySelector(".error");
+    error.style.display = "block";
+    error.innerText = message;
 }
 
 function ombre (sunrise,sunset){
 
     const jour = (sunset - sunrise)/12
     const time = Math.floor(Date.now() / 1000)//heure actuelle en Unix
-    
     // boucle pour divisier la journee en 12 partie
     for (let i = 0; i < 12; i++) {
         if(time + jour/2 < sunrise || time - jour/2 > sunset){moon(0);break}//nuit
@@ -114,14 +122,16 @@ function shadow(i) {
     weatherIcon.style.boxShadow = `${pixel}px 25px 8px 5px #16161780`;
 }
 // ajoute une lueur autour de weatherIcon
-  function moon(a) {
-      
-    const lum = a
-    if (lum == 0){b = "#ffffff90"}
-    else if(lum == 1){b = "#d76e4590"}
-    else if (lum == 2){b = "#5c0a04d9"}    
+  function moon(index) {    
+    
+    const lum = index
+    if (lum == 0){color = "#ffffff90"}
+    else if(lum == 1){color = "#d76e4590"}
+    else if (lum == 2){color = "#5c0a04d9"}    
 
     const weatherIcon = document.getElementById("weatherIcon");
-    weatherIcon.style.boxShadow = `0px 0px 90px 10px ${b}` ;
+    weatherIcon.style.boxShadow = `0px 0px 90px 10px ${color}`;
+    const night = document.querySelector("body")
+    night.style.background = "url(images/night.jpg)"
 }
   
