@@ -24,6 +24,7 @@ body {
     display: flex;
     height: auto;
     width: auto;
+    max-width: 45em;
     box-shadow: 3px 8px 32px 10px rgba(31, 38, 135, 1);
     backdrop-filter: blur(2px);
         /*-webkit-backdrop-filter: blur(3px);*/
@@ -35,9 +36,10 @@ body {
 
 header {
     color: blanchedalmond;
-    font-size: 21px;
-    font-weight: 500;
-    padding: 16px 15px;
+    font-size: 1.3em;
+    /*font-weight: 500;*/
+    height: auto;width: auto;
+    padding: 1em 0.9em;
     border-bottom: 1px solid #ffffff30;
 }
 
@@ -79,7 +81,7 @@ header {
     color: blanchedalmond;
     display: flex;
     align-items: left;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     line-height: 0.5em;
 }
@@ -113,7 +115,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and (max-aspect-ratio: 1/1) {
+@media screen and (max-width: 720px) {
 
     .location{margin-bottom: none;}
 
@@ -138,7 +140,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and (max-aspect-ratio: 3/2){
+@media screen and (max-width: 580px){
 
     /* header {width: 13.8em;} */
 
@@ -166,7 +168,7 @@ p{color: lightslategray;}
   }
 
 
-@media screen and (max-aspect-ratio: 19/8) {
+@media screen and (max-width: 340px) {
 
      header {width: 10em;}
 
