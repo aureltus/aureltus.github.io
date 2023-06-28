@@ -51,7 +51,7 @@ function weatherDetails(info) {
     windArrow.style.visibility = "visible";
 
     //lancement de la fonction avec le parametre id
-    wallpaper(id)
+    //wallpaper(id)
     
     ombre(sunrise,sunset)
 }
