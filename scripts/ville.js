@@ -17,9 +17,9 @@
 
 // recuperation de la ville du json
   function cityJson(info) {
-    const city = info.ville;//${city}
+    
+    const city = info.ville;
     api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=fr`;
-      console.log(city);
-      console.log(api);
+
       fetchData()//lance la demande api
 }
