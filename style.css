@@ -207,7 +207,9 @@ p{color: lightslategray;}
 
    @media screen and (orientation: portrait){p{background-color: blueviolet;}
 
-  
+  body {
+      background = "none"
+  }
 
   .block {
       display: flex;
