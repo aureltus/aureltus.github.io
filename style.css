@@ -186,7 +186,7 @@ p{color: lightslategray;}
   }
 
 
-  @media screen and (max-width: 340px),(orientation: portrait) {
+  @media screen and (max-width: 340px){
 
     header {width: 10em;}
 
