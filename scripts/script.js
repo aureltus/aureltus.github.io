@@ -17,12 +17,6 @@ function weatherDetails(info) {
     const sunrise = info.sys.sunrise;
     const sunset = info.sys.sunset;
     const {speed, deg} = info.wind;
-// test des constantes
-    console.log("lever: ", sunrise , "coucher: ", sunset)
-    console.log("vitesse vent: ",speed, "degré: ",deg)
-    console.log("temperature", temp, "humiditée: ", humidity)
-    console.log("description: ", description ,"id: ", id,"feels like: ", feels_like)
-    console.log("pression: ",pressure,"ville: ", city , country, "icon: ",icon)
 
 //affichage des constantes sur la page web 
     //icone
@@ -56,9 +50,9 @@ function weatherDetails(info) {
     windArrow.style.transform = `rotate(${deg}deg)`;
     windArrow.style.visibility = "visible";
 
-    //id = 505
     //lancement de la fonction avec le parametre id
     wallpaper(id)
+    
     ombre(sunrise,sunset)
 }
 //convertion de sunrise et sunset en date, puis recuperation de l'heure uniquement
@@ -102,21 +96,15 @@ function textError(message){
 
 function ombre (sunrise,sunset){
 
-    //const sunrise = 1687925899 
-    //const sunset = 1687981948
     const jour = (sunset - sunrise)/12
     const time = Math.floor(Date.now() / 1000)//heure actuelle en Unix
-    //time = 1687981948
-    console.log(time)
-    console.log(jour)
-    console.log(sunrise-(jour/2),sunset+(jour/2))
+    
     // boucle pour divisier la journee en 12 partie
     for (let i = 0; i < 12; i++) {
         if(time + jour/2 < sunrise || time - jour/2 > sunset){moon(0);break}//nuit
         else if(time < sunrise){moon(1);break}//aurore
         else if(time >= sunset){moon(2); break;}//crepuscule
         else if(time >= i*jour + sunrise && time < (i+1)*jour + sunrise){shadow(i*10)}
-        //else if(time + jour/2 > sunset){moon(0);break}
     }
  }
 // ajoute une ombre a weatherIcon en fonction de l'heure
@@ -128,14 +116,14 @@ function shadow(i) {
     weatherIcon.style.boxShadow = `${pixel}px 25px 8px 5px #16161780`;
 }
 // ajoute une lueur autour de weatherIcon
-  function moon(a) {    
+  function moon(a) {
+      
     const lum = a
     if (lum == 0){b = "#ffffff90"}
     else if(lum == 1){b = "#d76e4590"}
     else if (lum == 2){b = "#5c0a04d9"}    
 
     const weatherIcon = document.getElementById("weatherIcon");
-    weatherIcon.style.boxShadow = `0px 0px 90px 10px ${b}` ; //#ffffff80`;
-  console.log(a)
+    weatherIcon.style.boxShadow = `0px 0px 90px 10px ${b}` ;
 }
   
