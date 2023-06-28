@@ -3,7 +3,7 @@
     fetch("conf.json")
       .then((res) => res.json())
       .then((result) => cityJson(result))
-      .catch(() => {textError("erreur recuperation de la ville du json")});
+      .catch(() => {textError("erreur recuperation de la ville sur le json")});
   }
 
   // recuperation des donnees sur un serveur (utilisation en local)
@@ -11,7 +11,7 @@
         fetch("https://aureltus.github.io/conf.json")
           .then(response => response.json()) 
           .then(result => cityJson(result)) 
-          .catch(() => {textError("erreur recuperation de la ville du json sur le serveur")});
+          .catch(() => {textError("erreur recuperation de la ville sur le serveur")});
       
   }
 
