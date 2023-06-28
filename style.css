@@ -113,7 +113,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and (max-width: 45em) {
+@media screen and (max-width: 45em) ,(max-height: 80em) {
 
     .location{margin-bottom: none;}
 
@@ -138,7 +138,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and (max-width: 36em){
+@media screen and (max-width: 36em),(max-height: 60em){
 
     /* header {width: 13.8em;} */
 
