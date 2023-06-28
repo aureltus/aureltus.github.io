@@ -130,6 +130,32 @@ p{color: lightslategray;}
     }
   } */
 
+  @media screen and (orientation: portrait){p{color: blueviolet;}
+
+  header {width: 13.8em;}
+
+  .block {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .weather-part1 {
+      border-right: none;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .weather-part2 {
+      width: auto;
+      height: 20em;}
+
+  #windArrow {margin-right: 40%;}
+
+  #weatherIcon{height: 10em;width: auto;}
+  
+  .weather, .temp, .location{font-size: 1.5em;}
+  
+  .location{margin-bottom: 1em;}
+}
 
 
 @media screen and (max-width: 720px) {
