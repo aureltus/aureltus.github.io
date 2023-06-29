@@ -6,15 +6,6 @@ function fetchCity() {
     .catch(() => {textError("erreur recuperation de la ville sur le json")})
 }
 
-// recuperation des donnees sur un serveur (utilisation en local)
-function fetchCityServer() {
-  fetch("https://aureltus.github.io/conf.json")
-    .then(response => response.json()) 
-    .then(result => cityJson(result))
-    .catch(() => {textError("erreur recuperation de la ville sur le serveur")}) 
-               
-}
-
 // recuperation de la ville du json
 function cityJson(info) {
   const city = info.ville;
