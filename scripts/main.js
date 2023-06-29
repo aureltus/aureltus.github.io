@@ -1,10 +1,10 @@
-let apiKey = "bb0fe6f6fb5c73b69aca71deaa0c5da2"
-let api
+let apiKey = "bb0fe6f6fb5c73b69aca71deaa0c5da2";
+let api;
 
-fetchCityServer()
+fetchCity();
 
 //pour actualiser les donnees toutes les heures (3600000)
-setInterval(() => {fetchCityServer()}, 3600000); //60000 pour toutes les minutes
+setInterval(() => {fetchCity()}, 3600000); //60000 pour toutes les minutes
 
 
 
