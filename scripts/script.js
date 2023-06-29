@@ -51,7 +51,7 @@ function weatherDetails(info) {
     
     //lever et coucher de soleil
     const sunEdit = document.querySelector(".sun");
-    sunEdit.innerText = `${convertirDate(sunrise)} / ${convertirDate(sunset)}`;
+    sunEdit.innerText = `${convertDate(sunrise)} / ${convertDate(sunset)}`;
     
     //vitesse du vent et fleche pour le sens du vent
     const windEdit = document.querySelector(".wind");
@@ -62,17 +62,19 @@ function weatherDetails(info) {
 
     //lancement de la fonction avec le parametre id
     wallpaper(id)
-    ombre(sunrise,sunset)
+    calcShadow(sunrise,sunset)
 }
+
 //convertion de sunrise et sunset en date, puis recuperation de l'heure uniquement
-function convertirDate(num){
+function convertDate(num){
 
     let unix = num;
     let date = new Date(unix*1000);
-    let heures = date.getHours();
+    let hours = date.getHours();
     let minutes = date.getMinutes();
-    return `${heures}:${minutes}`;
+    return `${hours}:${minutes}`;
 }
+
 //wallpaper en fonction de l'id climat recu, 
 function wallpaper(id) {
 
@@ -102,36 +104,39 @@ function textError(message){
     error.innerText = message;
 }
 
-function ombre (sunrise,sunset){
+function calcShadow (sunrise,sunset){
 
-    const jour = (sunset - sunrise)/12
-    const time = Math.floor(Date.now() / 1000)//heure actuelle en Unix
-    // boucle pour divisier la journee en 12 partie
+    const day = (sunset - sunrise)/12;
+    const time = Math.floor(Date.now() / 1000); //heure actuelle en Unix
+
+    //boucle pour divisier la journee en 12 parties
     for (let i = 0; i < 12; i++) {
-        if(time + jour/2 < sunrise || time - jour/2 > sunset){moon(0);break}//nuit
+        if(time + day/2 < sunrise || time - day/2 > sunset){moon(0);break}//nuit
         else if(time < sunrise){moon(1);break}//aurore
         else if(time >= sunset){moon(2); break;}//crepuscule
-        else if(time >= i*jour + sunrise && time < (i+1)*jour + sunrise){shadow(i*10)}
+        else if(time >= i*day + sunrise && time < (i+1)*day + sunrise){shadow(i*10)}//journee
     }
  }
-// ajoute une ombre a weatherIcon en fonction de l'heure
+
+//ajoute une ombre a weatherIcon en fonction de l'heure
 function shadow(i) {
 
-    const pixel = (i-55)
+    const pixel = (i-55);
     const weatherIcon = document.getElementById("weatherIcon");
     weatherIcon.style.boxShadow = `${pixel}px 25px 8px 5px #16161780`;
 }
+
 // ajoute une lueur autour de weatherIcon
   function moon(index) {    
     
-    const lum = index
-    if (lum == 0){color = "#ffffff90"}
-    else if(lum == 1){color = "#d76e4590"}
-    else if (lum == 2){color = "#5c0a04d9"}    
+    const lum = index;
+    if (lum == 0){color = "#ffffff90"} //nuit
+    else if(lum == 1){color = "#d76e4590"} //aurore
+    else if (lum == 2){color = "#5c0a04d9"} //crepuscule    
 
     const weatherIcon = document.getElementById("weatherIcon");
     weatherIcon.style.boxShadow = `0px 0px 90px 10px ${color}`;
-    const night = document.querySelector("body")
-    night.style.background = "url(images/night.jpg)"
+    const night = document.querySelector("body");
+    night.style.background = "url(images/night.jpg)";
 }
   
