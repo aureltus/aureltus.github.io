@@ -9,7 +9,7 @@
     backdrop-filter: blur(0.1px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    z-index: 1; color: #2c0a04b9;
+    z-index: 1;
     display: none;
 }
     
@@ -27,7 +27,6 @@ body {
     max-width: 45em;
     box-shadow: 3px 8px 32px 10px rgba(31, 38, 135, 1);
     backdrop-filter: blur(2px);
-        /*-webkit-backdrop-filter: blur(3px);*/
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     flex-direction: column;
@@ -37,8 +36,6 @@ body {
 header {
     color: blanchedalmond;
     font-size: 1.3em;
-    /*font-weight: 500;*/
-    height: auto;width: auto;
     padding: 1em 0.9em;
     border-bottom: 1px solid #ffffff30;
 }
@@ -96,7 +93,8 @@ header {
 .line_feels{margin-top: 1.5em;}
 
 #windArrow {
-    margin-right: 30%;
+    margin-right: 30%; 
+    margin-top: 2%;
     height: 2em;
     width: 2em;
     float:right;
@@ -142,8 +140,6 @@ p{color: lightslategray;}
 
 @media screen and (max-width: 580px){
 
-    /* header {width: 13.8em;} */
-
     .block {
         display: flex;
         flex-direction: column;
@@ -158,19 +154,17 @@ p{color: lightslategray;}
         width: auto;
         height: 20em;}
 
-    #windArrow {margin-right: 40%;}
+    #windArrow {margin-right: 45%;}
 
     #weatherIcon{height: 10em;width: auto;}
     
     .weather, .temp, .location{font-size: 1.5em;}
     
     .location{margin-bottom: 1em;}
-  }
+}
 
 
 @media screen and (max-width: 340px) {
-
-     header {width: 10em;}
 
     .weather-part1 {
         width: auto;
