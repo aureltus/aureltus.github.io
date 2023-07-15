@@ -127,7 +127,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and (max-width: 720px) {
+@media screen and ((max-width: 720px) or (max-aspect-ratio:2/3)){
 
     .location{margin-bottom: none;}
 
@@ -152,7 +152,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and (max-width: 580px){
+@media screen and ((max-width: 580px)or (max-aspect-ratio:2/3)){
 
     .block {
         display: flex;
@@ -183,7 +183,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and ((max-width: 340px) or (max-aspect-ratio:10/19)) {
+@media screen and ((max-width: 340px) or (max-aspect-ratio:2/3)) {
 
     .wrapper{min-width: 12.5em;}
     
