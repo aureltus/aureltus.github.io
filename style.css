@@ -127,7 +127,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and ((max-width: 720px) or (max-aspect-ratio:2/3)){
+@media screen and (max-width: 720px){
 
     .location{margin-bottom: none;}
 
@@ -152,11 +152,16 @@ p{color: lightslategray;}
 }
 
 
-@media screen and ((max-width: 580px)or (max-aspect-ratio:2/3)){
+@media screen and (max-width: 580px){
 
     .block {
         display: flex;
         flex-direction: column;
+    }
+
+    header {
+        font-size: 1em;
+        padding: 0.7em 0.5em;
     }
 
     .wrapper {
@@ -165,42 +170,78 @@ p{color: lightslategray;}
 
     .weather-part1 {
         width: 100%;
+        height: 40%;
         border-right: none;
         border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
     }
 
     .weather-part2 {
         width: 100%;
-        height: 20em;}
+        height: 60%;}
 
-    /*#windArrow {margin-right: 40%;}*/
+
+    #weatherIcon{height: 8em;width: auto;
+    margin-top: 1em;}
+    
+    .weather, .temp, .location{font-size: 1.3em;}
+    
+    .location{margin-bottom: 1em;}
+}
+
+
+@media screen and (max-width: 340px) {
+
+    
+    .wrapper{min-width: 12.5em;}
+    
+    .weather, .temp, .location{font-size: 1em;}
+
+    .weather-part1 {
+       /* width: auto;*/
+       height: 40%;
+    }
+        
+    .weather-part2 {min-width: 8em;height: 20em;}
+    
+
+    #weatherIcon{
+        height: 3em;
+        margin-top: 0.5em;
+    }
+
+    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 0.8em;}
+
+}
+
+@media screen and (max-device-aspect-ratio:2/3){
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        height: 55em;
+    }
+
+    .wrapper {
+        width: 85%;
+        height: 90%;
+    }
+
+    .weather-part1 {
+        width: 100%;
+        height: 45%;
+        border-right: none;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .weather-part2 {
+        width: 100%;
+        height: 55%;}
 
     #weatherIcon{height: 10em;width: auto;}
     
     .weather, .temp, .location{font-size: 1.5em;}
     
     .location{margin-bottom: 1em;}
-}
-
-
-@media screen and ((max-width: 340px) or (max-aspect-ratio:2/3)) {
-
-    .wrapper{min-width: 12.5em;}
-    
-    .weather-part1 {
-       /* width: auto;*/
-        height: auto;
-    }
-        
-    .weather-part2 {min-width: 8em;}
-
-    /*#windArrow {margin-right: 10%;}*/
-
-    #weatherIcon{
-        height: 6em;
-        margin-top: 0.5em;
-    }
-
-    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 0.8em;}
+    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 1.5em;}
 
 }
