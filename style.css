@@ -213,7 +213,7 @@ p{color: lightslategray;}
 
 }
 
-@media screen and (max-device-aspect-ratio:2/3){
+@media screen and (max-device-aspect-ratio:3/5){
 
     .block {
         display: flex;
