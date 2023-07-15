@@ -183,7 +183,7 @@ p{color: lightslategray;}
 }
 
 
-@media screen and (max-width: 340px) {
+@media screen and ((max-width: 340px) or (max-aspect-ratio:10/19)) {
 
     .wrapper{min-width: 12.5em;}
     
