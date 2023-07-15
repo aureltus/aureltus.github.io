@@ -15,16 +15,21 @@
     
 body {
     display: flex;
+   /* width: max-content;
+    height: max-content;*/
+    /*background-attachment:fixed;
+    background-repeat: no-repeat;*/
     justify-content: center;
     background-color:tan;
-    margin: 4% 0% 4% 0%; 
+    margin: 4% 0% 4% 0%;
 }
 
 .wrapper {
     display: flex;
     height: auto;
-    width: auto;
-    max-width: 45em;
+    /*width: 85%;
+    max-width: 45em;*/
+    /*width: 45em;*/
     box-shadow: 3px 8px 32px 10px rgba(31, 38, 135, 1);
     backdrop-filter: blur(2px);
     border-radius: 10px;
@@ -49,6 +54,7 @@ header {
     display: flex;
     height: 25em;
     width: 25em;
+    /*width: 55%;*/
     align-items: center;
     justify-content:space-around;
     flex-direction:column ;
@@ -72,7 +78,7 @@ header {
 .location{margin-bottom: 2em;}
 
 .weather-part2 {
-    min-width: 15em;
+    /*width: 45%;*/
     width: 20em;
     height: auto;
     color: blanchedalmond;
@@ -88,17 +94,25 @@ header {
     font-size: 1.2em;
 }
 
-.line_wind{font-size: 1.2em;}
+.line_wind{font-size: 1.2em;
+flex-direction: row;
+display:flex ;
+}
+.weapper_wind{flex-direction: column;
+display: flex;
+align-content: flex-start;}
 
 .line_feels{margin-top: 1.5em;}
 
 #windArrow {
-    margin-right: 30%; 
-    margin-top: 2%;
+    /*margin-right: 25%; */
+    margin-left: 5%;
+    /*margin-top: 2%;*/
     height: 2em;
     width: 2em;
-    float:right;
-    visibility:hidden;
+    /*float:right;*/
+    /*visibility:hidden;*/
+    display: block;
 }
 
 p{color: lightslategray;}
@@ -121,7 +135,7 @@ p{color: lightslategray;}
 
     .weather-part1 {
         height: 20em;
-        width: 20em;
+        width: 19em;
     }
 
     .icon{
@@ -134,7 +148,7 @@ p{color: lightslategray;}
 
     .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 1em;}
 
-    .weather-part2 {width: auto;}
+    .weather-part2 {width: 16em;}
 }
 
 
@@ -145,16 +159,21 @@ p{color: lightslategray;}
         flex-direction: column;
     }
 
+    .wrapper {
+        width: 85%;
+    }
+
     .weather-part1 {
+        width: 100%;
         border-right: none;
         border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
     }
 
     .weather-part2 {
-        width: auto;
+        width: 100%;
         height: 20em;}
 
-    #windArrow {margin-right: 45%;}
+    /*#windArrow {margin-right: 40%;}*/
 
     #weatherIcon{height: 10em;width: auto;}
     
@@ -166,17 +185,22 @@ p{color: lightslategray;}
 
 @media screen and (max-width: 340px) {
 
+    .wrapper{min-width: 12.5em;}
+    
     .weather-part1 {
-        width: auto;
+       /* width: auto;*/
         height: auto;
     }
         
-    .weather-part2 {width: 10em;}
+    .weather-part2 {min-width: 8em;}
 
-    #windArrow {margin-right: 30%;}
+    /*#windArrow {margin-right: 10%;}*/
 
     #weatherIcon{
         height: 6em;
         margin-top: 0.5em;
     }
+
+    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 0.8em;}
+
 }
