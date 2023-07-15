@@ -2,7 +2,7 @@
 function fetchData() {
 
     fetch(api)
-        .catch(() => {textError("Problème avec la requête api")})
+        .catch(() => {textError("Problème avec la requête api")})   
         .then((res) => res.json())
         .then((result) => weatherDetails(result))
       
@@ -22,12 +22,12 @@ function weatherDetails(info) {
 //affichage des constantes sur la page web 
     
     //icone
-    const iconEdit = document.getElementById("weatherIcon");
-    iconEdit.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+    const iconWeatherEdit = document.getElementById("weatherIcon");
+    iconWeatherEdit.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     
     //temperature
     const tempEdit = document.querySelector(".temp");
-    tempEdit.innerText = `${Math.floor(temp)} °C`;
+    tempEdit.innerText = `${Math.round(temp)} °C`;
     
     //descrition temps
     const descriptionEdit = document.querySelector(".weather");
@@ -39,26 +39,47 @@ function weatherDetails(info) {
     
     //temperature ressentie
     const feels_likeEdit = document.querySelector(".temp-2");
-    feels_likeEdit.innerText = `${Math.floor(feels_like)} °C`;
+    feels_likeEdit.innerText = `${Math.round(feels_like)} °C`;
+    const iconEdit = document.querySelector(".t1");
+    iconEdit.src = "icon/feels_like-icon.svg";
+    const textEdit = document.querySelector(".line_feels p")
+    textEdit.innerText = "ressentie"
    
     //pression
     const pressureEdit = document.querySelector(".pressure");
     pressureEdit.innerText = `${pressure} hPa`;
+    const iconEdit2 = document.querySelector(".t2");
+    iconEdit2.src = "icon/pressure-icon.svg";
+    const textEdit2 = document.querySelector(".line_pressure p")
+    textEdit2.innerText = "pression"
     
     //humidite
     const humidityEdit = document.querySelector(".humidity") ;
     humidityEdit.innerText = `${humidity} %`;
+    const iconEdit3 = document.querySelector(".t3");
+    iconEdit3.src = "icon/humidity-icon.svg";
+    const textEdit3 = document.querySelector(".line_humidity p")
+    textEdit3.innerText = "humidité"
     
     //lever et coucher de soleil
     const sunEdit = document.querySelector(".sun");
     sunEdit.innerText = `${convertDate(sunrise)} / ${convertDate(sunset)}`;
+    const iconEdit4 = document.querySelector(".t4");
+    iconEdit4.src = "icon/sunrise-icon.svg";
+    const textEdit4 = document.querySelector(".line_sun p")
+    textEdit4.innerText = "lever/coucher"
     
     //vitesse du vent et fleche pour le sens du vent
     const windEdit = document.querySelector(".wind");
     windEdit.innerText = `${speed} m/s`;
     const windArrow = document.getElementById("windArrow");
     windArrow.style.transform = `rotate(${deg}deg)`;
-    windArrow.style.visibility = "visible";
+    //windArrow.style.visibility = "visible";
+    windArrow.style.display = "block"
+    const iconEdit5 = document.querySelector(".t5");
+    iconEdit5.src = "icon/wind-icon.svg";
+    const textEdit5 = document.querySelector(".line_wind p")
+    textEdit5.innerText = "vent"
 
     //lancement de la fonction avec le parametre id
     wallpaper(id)
@@ -71,7 +92,9 @@ function convertDate(num){
     let unix = num;
     let date = new Date(unix*1000);
     let hours = date.getHours();
+    if (hours<10) {hours = "0" + hours}
     let minutes = date.getMinutes();
+    if (minutes<10) {minutes = "0" + minutes}
     return `${hours}:${minutes}`;
 }
 
@@ -94,6 +117,8 @@ function wallpaper(id) {
     }
     wallpaper.style.backgroundRepeat = "no-repeat";
     wallpaper.style.backgroundPosition = "center";
+    wallpaper.style.backgroundSize = "100% 100%" ;
+    wallpaper.style.backgroundAttachment = "fixed";
 
 }
 
@@ -138,5 +163,9 @@ function shadow(i) {
     weatherIcon.style.boxShadow = `0px 0px 90px 10px ${color}`;
     const night = document.querySelector("body");
     night.style.background = "url(images/night.jpg)";
+    night.style.backgroundRepeat = "no-repeat";
+    night.style.backgroundPosition = "center";
+    night.style.backgroundSize = "100% 100%" ;
+    night.style.backgroundAttachment = "fixed";
 }
-  
+
