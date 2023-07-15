@@ -212,36 +212,3 @@ p{color: lightslategray;}
     .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 0.8em;}
 
 }
-
-@media screen and (max-device-aspect-ratio:3/5){
-
-    .block {
-        display: flex;
-        flex-direction: column;
-        height: 55em;
-    }
-
-    .wrapper {
-        width: 85%;
-        height: 90%;
-    }
-
-    .weather-part1 {
-        width: 100%;
-        height: 45%;
-        border-right: none;
-        border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .weather-part2 {
-        width: 100%;
-        height: 50em;}
-
-    #weatherIcon{height: 10em;width: auto;}
-    
-    .weather, .temp, .location{font-size: 1.5em;}
-    
-    .location{margin-bottom: 1em;}
-    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 1.5em;}
-
-}
