@@ -89,20 +89,34 @@ header {
     line-height: 0.5em;
 }
 
-.line_humidity, .line_feels, .line_sun, .line_pressure{
+.line_feels, .line_pressure, .line_humidity, .line_sun{
     border-bottom: 1px solid  #ffffff30;
     font-size: 1.2em;
 }
 
-.line_wind{font-size: 1.2em;
-flex-direction: row;
-display:flex ;
+.line_3h, .line_6h, .line_9h, .line_12h {
+    border-bottom: 1px solid  #ffffff30;
+    font-size: 1.2em;
+    display: none;}
+
+.line_wind{
+    font-size: 1.2em;
+    flex-direction: row;
+    display:flex ;
 }
-.weapper_wind{flex-direction: column;
-display: flex;
-align-content: flex-start;}
+
+.weapper_wind{
+    flex-direction: column;
+    align-content: flex-start;}
+
+.line_15h{
+    font-size: 1.2em;
+    display:none;
+}
 
 .line_feels{margin-top: 1.5em;}
+
+.line_3h{margin-top: 1.5em;}
 
 #windArrow {
     /*margin-right: 25%; */
@@ -127,6 +141,7 @@ p{color: lightslategray;}
 }
 
 
+
 @media screen and (max-width: 720px){
 
     .location{margin-bottom: none;}
@@ -146,7 +161,11 @@ p{color: lightslategray;}
 
     .line_feels{margin-top: 0.6em;}
 
+    .line_3h{margin-top: 0.6em;}
+
     .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 1em;}
+
+    .line_3h, .line_6h, .line_9h, .line_12h, .line_15h{font-size: 1em;}
 
     .weather-part2 {width: 16em;}
 }
@@ -180,8 +199,9 @@ p{color: lightslategray;}
         height: 60%;}
 
 
-    #weatherIcon{height: 8em;width: auto;
-    margin-top: 1em;}
+    #weatherIcon{
+        height: 8em;width: auto;
+        margin-top: 1em;}
     
     .weather, .temp, .location{font-size: 1.3em;}
     
@@ -201,7 +221,9 @@ p{color: lightslategray;}
        height: 40%;
     }
         
-    .weather-part2 {min-width: 8em;height: 20em;}
+    .weather-part2 {
+        min-width: 8em;
+        height: 20em;}
     
 
     #weatherIcon{
@@ -211,4 +233,38 @@ p{color: lightslategray;}
 
     .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 0.8em;}
 
+    .line_3h, .line_6h, .line_9h, .line_12h, .line_15h{font-size: 0.8em;}
 }
+
+/*@media screen and (max-device-aspect-ratio:2/3){
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        height: 55em;
+    }
+
+    .wrapper {
+        width: 85%;
+        height: 90%;
+    }
+
+    .weather-part1 {
+        width: 100%;
+        height: 45%;
+        border-right: none;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .weather-part2 {
+        width: 100%;
+        height: 55%;}
+
+    #weatherIcon{height: 10em;width: auto;}
+    
+    .weather, .temp, .location{font-size: 1.5em;}
+    
+    .location{margin-bottom: 1em;}
+    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 1.5em;}
+
+}*/

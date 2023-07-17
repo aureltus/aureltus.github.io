@@ -8,6 +8,7 @@
     <script src="scripts/ville.js">defer</script>
     <script src="scripts/script.js">defer</script>
     <script src="scripts/forecast.js">defer</script>
+    <script src="scripts/switchLine.js">defer</script>
     <script src="scripts/main.js">defer</script>
     <title>meteo</title>
   </head>
@@ -23,32 +24,60 @@
         </section>
         <section class="weather-part2">
           <div class="line_feels">
-            <img class="icon t1" src="icon/feels_like-icon.svg">
+            <img class="icon" src="icon/feels_like-icon.svg">
             <span class="temp-2">_°C</span>
             <p>ressentie</p>
           </div>
+          <div class="line_3h">
+            <img class="icon t1" src="icon/none.svg">
+            <span class="temp_3h">_ °C</span>
+            <p></p>
+          </div>
           <div class="line_pressure">
-            <img class="icon t2" src="icon/pressure-icon.svg">
+            <img class="icon" src="icon/pressure-icon.svg">
             <span class="pressure">_ hPa</span>
             <p>pression</p>
           </div>
+          <div class="line_6h">
+            <img class="icon t2" src="icon/none.svg">
+            <span class="temp_6h">_ °C</span>
+            <p></p>
+          </div>
           <div class="line_humidity">
-            <img class="icon t3" src="icon/humidity-icon.svg">
+            <img class="icon" src="icon/humidity-icon.svg">
             <span class="humidity">_</span>
             <p>humidité</p>
           </div>
+          <div class="line_9h">
+            <img class="icon t3" src="icon/none.svg">
+            <span class="temp_9h">_ °C</span>
+            <p></p>
+          </div>
           <div class="line_sun">
-            <img class="icon t4" src="icon/sunrise-icon.svg">
+            <img class="icon" src="icon/sunrise-icon.svg">
             <span class="sun">_ / _</span>
             <p>lever/coucher</p>
           </div>
+
+          <div class="line_12h">
+            <img class="icon t4" src="icon/none.svg">
+            <span class="temp_12h">_ °C</span>
+            <p></p>
+          </div>
+
           <div class="line_wind">            
-            <img class="icon t5" src="icon/wind-icon.svg">
+            <img class="icon" src="icon/wind-icon.svg">
             <span class="weapper_wind">
               <span class="wind">_ m/s</span>          
               <p>vent</p>
             </span>
             <img src="icon/arrow.svg" id="windArrow"/>
+          </div>
+          <div class="line_15h">            
+            <img class="icon t5" src="icon/none.svg">
+              <span class="temp_15h">_ °C</span>          
+              <p></p>
+
           </div>
         </section>
       </section>
