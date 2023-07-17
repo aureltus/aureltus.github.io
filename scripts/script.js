@@ -5,8 +5,8 @@ function fetchData() {
         .catch(() => {textError("Problème avec la requête api")})   
         .then((res) => res.json())
         .then((result) => weatherDetails(result))
-      
 }
+
 //traitement des donnees et affectation
 function weatherDetails(info) {
 
@@ -40,46 +40,25 @@ function weatherDetails(info) {
     //temperature ressentie
     const feels_likeEdit = document.querySelector(".temp-2");
     feels_likeEdit.innerText = `${Math.round(feels_like)} °C`;
-    const iconEdit = document.querySelector(".t1");
-    iconEdit.src = "icon/feels_like-icon.svg";
-    const textEdit = document.querySelector(".line_feels p")
-    textEdit.innerText = "ressentie"
    
     //pression
     const pressureEdit = document.querySelector(".pressure");
     pressureEdit.innerText = `${pressure} hPa`;
-    const iconEdit2 = document.querySelector(".t2");
-    iconEdit2.src = "icon/pressure-icon.svg";
-    const textEdit2 = document.querySelector(".line_pressure p")
-    textEdit2.innerText = "pression"
     
     //humidite
     const humidityEdit = document.querySelector(".humidity") ;
     humidityEdit.innerText = `${humidity} %`;
-    const iconEdit3 = document.querySelector(".t3");
-    iconEdit3.src = "icon/humidity-icon.svg";
-    const textEdit3 = document.querySelector(".line_humidity p")
-    textEdit3.innerText = "humidité"
     
     //lever et coucher de soleil
     const sunEdit = document.querySelector(".sun");
     sunEdit.innerText = `${convertDate(sunrise)} / ${convertDate(sunset)}`;
-    const iconEdit4 = document.querySelector(".t4");
-    iconEdit4.src = "icon/sunrise-icon.svg";
-    const textEdit4 = document.querySelector(".line_sun p")
-    textEdit4.innerText = "lever/coucher"
     
     //vitesse du vent et fleche pour le sens du vent
     const windEdit = document.querySelector(".wind");
     windEdit.innerText = `${speed} m/s`;
     const windArrow = document.getElementById("windArrow");
     windArrow.style.transform = `rotate(${deg}deg)`;
-    //windArrow.style.visibility = "visible";
-    windArrow.style.display = "block"
-    const iconEdit5 = document.querySelector(".t5");
-    iconEdit5.src = "icon/wind-icon.svg";
-    const textEdit5 = document.querySelector(".line_wind p")
-    textEdit5.innerText = "vent"
+    windArrow.style.display = "block";
 
     //lancement de la fonction avec le parametre id
     wallpaper(id)
@@ -92,9 +71,9 @@ function convertDate(num){
     let unix = num;
     let date = new Date(unix*1000);
     let hours = date.getHours();
-    if (hours<10) {hours = "0" + hours}
+    if (hours<10) {hours = "0" + hours};
     let minutes = date.getMinutes();
-    if (minutes<10) {minutes = "0" + minutes}
+    if (minutes<10) {minutes = "0" + minutes};
     return `${hours}:${minutes}`;
 }
 
@@ -136,9 +115,9 @@ function calcShadow (sunrise,sunset){
 
     //boucle pour divisier la journee en 12 parties
     for (let i = 0; i < 12; i++) {
-        if(time + day/2 < sunrise || time - day/2 > sunset){moon(0);break}//nuit
-        else if(time < sunrise){moon(1);break}//aurore
-        else if(time >= sunset){moon(2); break;}//crepuscule
+        if(time + day/2 < sunrise || time - day/2 > sunset){moon(0); break}//nuit
+        else if(time < sunrise){moon(1); break}//aurore
+        else if(time >= sunset){moon(2); break}//crepuscule
         else if(time >= i*day + sunrise && time < (i+1)*day + sunrise){shadow(i*10)}//journee
     }
  }

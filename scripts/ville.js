@@ -26,10 +26,12 @@ function fetchCityServerPrev() {
   fetch("https://aureltus.github.io/conf.json")
     .then(response => response.json()) 
     .then(result => prevision(result))
-    .catch(() => {textError("erreur recuperation de la ville sur le serveur")}) }
+    .catch(() => {textError("erreur recuperation de la ville sur le serveur")}) 
+}
 
 function prevision(info) {
   const city = info.ville;
   api2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}&lang=fr`;
   fetchData2()//lance la demande api
+
 }
