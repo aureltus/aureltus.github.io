@@ -15,6 +15,10 @@
     
 body {
     display: flex;
+   /* width: max-content;
+    height: max-content;*/
+    /*background-attachment:fixed;
+    background-repeat: no-repeat;*/
     justify-content: center;
     background-color:tan;
     margin: 4% 0% 4% 0%;
@@ -23,6 +27,9 @@ body {
 .wrapper {
     display: flex;
     height: auto;
+    /*width: 85%;
+    max-width: 45em;*/
+    /*width: 45em;*/
     box-shadow: 3px 8px 32px 10px rgba(31, 38, 135, 1);
     backdrop-filter: blur(2px);
     border-radius: 10px;
@@ -47,6 +54,7 @@ header {
     display: flex;
     height: 25em;
     width: 25em;
+    /*width: 55%;*/
     align-items: center;
     justify-content:space-around;
     flex-direction:column ;
@@ -111,9 +119,13 @@ header {
 .line_3h{margin-top: 1.5em;}
 
 #windArrow {
+    /*margin-right: 25%; */
     margin-left: 5%;
+    /*margin-top: 2%;*/
     height: 2em;
     width: 2em;
+    /*float:right;*/
+    /*visibility:hidden;*/
     display: block;
 }
 
@@ -128,7 +140,9 @@ p{color: lightslategray;}
     margin-left: 1em;
 }
 
-
+.anime{opacity: 0%;
+    transition: 0.5s;
+    animation-timing-function: ease-in;}
 
 @media screen and (max-width: 720px){
 
@@ -205,6 +219,7 @@ p{color: lightslategray;}
     .weather, .temp, .location{font-size: 1em;}
 
     .weather-part1 {
+       /* width: auto;*/
        height: 40%;
     }
         
@@ -222,3 +237,36 @@ p{color: lightslategray;}
 
     .line_3h, .line_6h, .line_9h, .line_12h, .line_15h{font-size: 0.8em;}
 }
+
+/*@media screen and (max-device-aspect-ratio:2/3){
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        height: 55em;
+    }
+
+    .wrapper {
+        width: 85%;
+        height: 90%;
+    }
+
+    .weather-part1 {
+        width: 100%;
+        height: 45%;
+        border-right: none;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .weather-part2 {
+        width: 100%;
+        height: 55%;}
+
+    #weatherIcon{height: 10em;width: auto;}
+    
+    .weather, .temp, .location{font-size: 1.5em;}
+    
+    .location{margin-bottom: 1em;}
+    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 1.5em;}
+
+}*/
