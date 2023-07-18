@@ -12,7 +12,11 @@
     z-index: 1;
     display: none;
 }
-    
+.as{font-size: 0.9em;
+
+
+}
+
 body {
     display: flex;
    /* width: max-content;
