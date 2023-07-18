@@ -1,3 +1,4 @@
+p {color: blue;}
 
 .block {
     display: flex;
@@ -7,22 +8,24 @@
 
 .wrapper {
     width: 85%;
-    height: 190%;
+    height: 60em;
     background: #7d586fe0;
 }
 
 .weather-part1 {
     width: 100%;
+    height: 45%;
     border-right: none;
     border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
 }
 
 .weather-part2 {
-    width: 100%;}
+    width: 100%;
+    height: 55%;}
 
-#weatherIcon{height: 30% ;width: 30%;}
+#weatherIcon{height: 20em;width: 20em;}
 
-.weather, .temp, .location{font-size: 3em;}
+.weather, .temp, .location{font-size: 2.5em;}
 
 .location{margin-bottom: 1em;}
 .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 2.5em;}
