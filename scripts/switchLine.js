@@ -15,6 +15,7 @@ function switchLine(i) {
 
     if (index == 1) {
 
+        //translation vers le bas et ajout de class(donnees)
         feels_like.style.transform += `translateY(-25px)`;
         feels_like.classList.add("anime");
         pressure.style.transform += `translateY(-25px)`;
@@ -26,6 +27,7 @@ function switchLine(i) {
         wind.style.transform += `translateY(-25px)`;
         wind.classList.add("anime");
 
+        //translation vers le haut et retrait de class(prevision)
         line3h.style.transform += `translateY(25px)`;
         line3h.classList.remove("anime");
         line6h.style.transform += `translateY(25px)`;
@@ -39,18 +41,21 @@ function switchLine(i) {
 
         setTimeout(() => {
 
+            //décalage pour remmettre le bon emplacement
             line3h.style.transform += `translateY(-25px)`;
             line6h.style.transform += `translateY(-25px)`;
             line9h.style.transform += `translateY(-25px)`;
             line12h.style.transform += `translateY(-25px)`;
             line15h.style.transform += `translateY(-25px)`;
 
+        //desactive les donnees meteo
         feels_like.style.display = "none";
         pressure.style.display = "none";
         humidity.style.display = "none";
         sun.style.display = "none";
         wind.style.display = "none";
 
+        //active les previsions
         line3h.style.display = "block";
         line6h.style.display = "block";
         line9h.style.display = "block";
@@ -58,6 +63,8 @@ function switchLine(i) {
         line15h.style.display = "block";}, 500)
     }
     if (index == 2) {
+
+        //translation vers le haut et retrait de class(donnees)
         feels_like.style.transform += `translateY(25px)`;
         feels_like.classList.remove("anime");
         pressure.style.transform += `translateY(25px)`;
@@ -69,6 +76,7 @@ function switchLine(i) {
         wind.style.transform += `translateY(25px)`;
         wind.classList.remove("anime");
 
+        //translation vers le bas et ajout de class(prevision)
         line3h.style.transform += `translateY(-25px)`;
         line3h.classList.add("anime");
         line6h.style.transform += `translateY(-25px)`;
@@ -82,18 +90,21 @@ function switchLine(i) {
 
         setTimeout(() => {
 
+            //décalage pour remmettre le bon emplacement
             line3h.style.transform += `translateY(25px)`;
             line6h.style.transform += `translateY(25px)`;
             line9h.style.transform += `translateY(25px)`;
             line12h.style.transform += `translateY(25px)`;
             line15h.style.transform += `translateY(25px)`;
 
+        //desactive les previsions
         line3h.style.display = "none";
         line6h.style.display = "none";
         line9h.style.display = "none";
         line12h.style.display = "none";
         line15h.style.display = "none";
 
+        //active les donnees meteo
         feels_like.style.display = "block";
         pressure.style.display = "block";
         humidity.style.display = "block";
