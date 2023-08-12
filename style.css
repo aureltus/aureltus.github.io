@@ -61,6 +61,26 @@ header {
     margin: 0.5em;
     background-color: rgba(31, 38, 135, 0.87);
 }
+.icon:hover,#weatherIcon:hover{
+    /*transform: scale(1.2);*/
+    animation: pulse 1.6s infinite ;
+    /*transition: 0.5s;*/
+}
+
+.lien{position: absolute; left: 20; right: 0; padding: 1%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: darkred;
+}
+
+@keyframes pulse {
+    /*0%{transform: scale(1);}*/
+    90%{transform: scale(1);}
+    91%{transform: scale(1.20);}
+    92%{transform: scale(1.10);}
+    93%{transform: scale(0.9);}
+    94%{transform: scale(1);}
+}
 
 .weather, .temp, .location{
     font-size: 2em;
@@ -80,18 +100,16 @@ header {
     line-height: 0.5em;
 }
 
-.line_feels, .line_pressure, .line_humidity, .line_sun{
-    border-bottom: 1px solid  #ffffff30;
+.line{
     font-size: 1.2em;
+    border-bottom: 1px solid  #ffffff30;
 }
 
-.line_3h, .line_6h, .line_9h, .line_12h {
-    border-bottom: 1px solid  #ffffff30;
-    font-size: 1.2em;
+.line_3h, .line_6h, .line_9h, .line_12h,.line_15h {
     display: none;}
 
 .line_wind{
-    font-size: 1.2em;
+    border-bottom: none;
     flex-direction: row;
     display:flex ;
 }
@@ -101,13 +119,10 @@ header {
     align-content: flex-start;}
 
 .line_15h{
-    font-size: 1.2em;
-    display:none;
+    border-bottom: none;
 }
 
-.line_feels{margin-top: 1.5em;}
-
-.line_3h{margin-top: 1.5em;}
+.line_feels, .line_3h{margin-top: 1.5em;}
 
 #windArrow {
     margin-left: 5%;
@@ -150,13 +165,9 @@ p{color: lightslategray;}
         margin-top: 0em;
     }
 
-    .line_feels{margin-top: 0.6em;}
+    .line{font-size: 1em;}
 
-    .line_3h{margin-top: 0.6em;}
-
-    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 1em;}
-
-    .line_3h, .line_6h, .line_9h, .line_12h, .line_15h{font-size: 1em;}
+    .line_feels, .line_3h{margin-top: 0.6em;}
 
     .weather-part2 {width: 16em;}
 }
@@ -197,6 +208,11 @@ p{color: lightslategray;}
     .weather, .temp, .location{font-size: 1.3em;}
     
     .location{margin-bottom: 1em;}
+    .line_wind{margin-bottom: -0.5em;}
+    #windArrow {
+        height: 1.6em;
+        width: 1.6em;
+    }
 }
 
 
@@ -220,7 +236,5 @@ p{color: lightslategray;}
         margin-top: 0.5em;
     }
 
-    .line_humidity, .line_feels, .line_sun, .line_pressure, .line_wind{font-size: 0.8em;}
-
-    .line_3h, .line_6h, .line_9h, .line_12h, .line_15h{font-size: 0.8em;}
+    .line{font-size: 0.8em;}
 }
