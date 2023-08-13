@@ -1,5 +1,5 @@
 @media screen and (min-width: 720px){
-body{transform: scale(3)}
+main{transform: scale(3)}
   .lien{position: absolute; left: 0; right: 20; padding: 5%;}
     #soleil {
       margin-top: 350px;
