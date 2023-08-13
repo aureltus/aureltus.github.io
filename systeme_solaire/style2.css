@@ -152,6 +152,7 @@ margin-left: 8px;
     margin-top: 175px;
     transition: all 0.4s;
     opacity: 0;
+    display: none;
 }
 
 #info_terre:hover ~ #cadre_terre,
@@ -160,6 +161,7 @@ margin-left: 8px;
     opacity: 1;
     margin-left: -10px;
     transition: all 0.4s;
+    display: inline;
 }
 
 /*body {
