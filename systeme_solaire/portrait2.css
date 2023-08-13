@@ -11,7 +11,7 @@
     #soleil {
       /*margin-top: 350px;
       margin-left: 150px;*/
-      margin-top: 750px;
+      margin-top: 725px;
       margin-left: 450px;
       transform: scale(3);}
       @keyframes pulse {
@@ -29,7 +29,7 @@
     #terre{
       /*margin-top: 275px;
       margin-left: 75px;*/
-      margin-top: 675px;
+      margin-top: 650px;
       margin-left: 375px;
       transform: scale(3);
   }
@@ -38,9 +38,9 @@
     to { transform: rotate(-180deg) translateY(-125px)scale(3);}
 }
 
-#info_soleil{margin-top: 250px;margin-left: 100px;}
-#info_terre{margin-top: 250px;margin-left: 300px;}
-#info_lune{margin-top: 250px;margin-left: 500px;}
+#info_soleil{margin-top: 225px;margin-left: 100px;}
+#info_terre{margin-top: 225px;margin-left: 300px;}
+#info_lune{margin-top: 225px;margin-left: 500px;}
 }
 
 /* Cadres Informations PlanÃ¨tes
@@ -50,10 +50,10 @@
 #cadre_terre,
 #cadre_soleil,
 #cadre_lune{
-    width:600px;
+    width:650px;
     padding:10px;
 
-    font-size:33px;
+    font-size:23px;
     margin-left: -150px;
     margin-top: 1250px;
 
