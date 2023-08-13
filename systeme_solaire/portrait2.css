@@ -32,6 +32,7 @@
       margin-left: 75px;*/
       margin-top: 675px;
       margin-left: 375px;
+      transform: scale(3);
   }
   @keyframes orbite_terre {
     from { transform: rotate(180deg) translateY(-125px)scale(3);}
