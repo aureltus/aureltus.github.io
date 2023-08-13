@@ -8,7 +8,6 @@
   .text:hover{
    font-size: 64px;
 }
-  #lune.orbite{border: 1px solid rgba(255, 255, 255, 0.2);}
     #soleil {
       /*margin-top: 350px;
       margin-left: 150px;*/
@@ -42,6 +41,30 @@
 #info_soleil{margin-top: 250px;margin-left: 100px;}
 #info_terre{margin-top: 250px;margin-left: 300px;}
 #info_lune{margin-top: 250px;margin-left: 500px;}
+}
+
+/* Cadres Informations PlanÃ¨tes
+-------------------------------------------------------------- */
+
+
+#cadre_terre,
+#cadre_soleil,
+#cadre_lune{
+    width:250px;
+    padding:10px;
+
+    font-size:13px;
+    margin-left: -150px;
+    margin-top: 850px;
+
+}
+
+#info_terre:hover ~ #cadre_terre,
+#info_soleil:hover ~ #cadre_soleil,
+#info_lune:hover ~ #cadre_lune{
+    opacity: 1;
+    margin-left: -10px;
+    transition: all 0.4s;
 }
 
 @keyframes anim-stars {
@@ -131,4 +154,3 @@ from {
   animation-name: anim-stars;
   animation-timing-function: linear;
 }
-

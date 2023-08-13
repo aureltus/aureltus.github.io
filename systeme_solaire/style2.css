@@ -27,7 +27,6 @@ body{
     transition: 0.5s;
     box-shadow: inset 5px 0px 30px 1px rgba(198, 9, 9, 0.269);
 }
-
 .orbite{
 	position: absolute;
 	border-radius: 50%;
@@ -48,7 +47,7 @@ body{
     box-shadow: 0px 0px 25px 0px #ffe240;
     filter:progid:DXImageTransform.Microsoft.Shadow(color=#ffe240, Direction=NaN, Strength=25);
     margin-top: 250px;
-    margin-left: 450px;
+    margin-left: 550px;
     transition: 0.5s;
     transform: scale(1.5);
 }
@@ -75,9 +74,9 @@ body{
 }
 
 /* Info PlanÃ¨te */
-#info_soleil{margin-top: 250px;margin-left: 800px;}
-#info_terre{margin-top: 300px;margin-left: 800px;}
-#info_lune{margin-top: 350px;margin-left: 800px;}
+#info_soleil{margin-top: 250px;margin-left: 900px;}
+#info_terre{margin-top: 300px;margin-left: 900px;}
+#info_lune{margin-top: 350px;margin-left: 900px;}
 
 #terre{
     position: absolute;
@@ -85,7 +84,7 @@ body{
     width: 250px;
     height: 250px;
     margin-top: 175px;
-    margin-left: 375px;
+    margin-left: 475px;
     transform: scale(1.5);
 }
 
@@ -132,6 +131,35 @@ margin-left: 8px;
 @keyframes orbite_lune {
     from { transform: rotate(-180deg) translateY(-11px);}
     to { transform: rotate(180deg) translateY(-11px);}
+}
+
+/* Cadres Informations PlanÃ¨tes
+-------------------------------------------------------------- */
+
+
+#cadre_terre,
+#cadre_soleil,
+#cadre_lune{
+    position: absolute;
+    width:300px;
+    padding:10px;
+    background-color: #071924;
+    border: 1px solid #24485d;
+    border-radius: 3px;
+    color:#3a5d72;
+    font-size:13px;
+    margin-left: -150px;
+    margin-top: 175px;
+    transition: all 0.4s;
+    opacity: 0;
+}
+
+#info_terre:hover ~ #cadre_terre,
+#info_soleil:hover ~ #cadre_soleil,
+#info_lune:hover ~ #cadre_lune{
+    opacity: 1;
+    margin-left: -10px;
+    transition: all 0.4s;
 }
 
 /*body {
