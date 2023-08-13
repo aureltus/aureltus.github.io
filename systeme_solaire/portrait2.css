@@ -63,7 +63,7 @@
 #info_soleil:hover ~ #cadre_soleil,
 #info_lune:hover ~ #cadre_lune{
     opacity: 1;
-    margin-left: 50px;
+    margin-left: 25px;
     transition: all 0.4s;
 }
 
