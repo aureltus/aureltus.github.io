@@ -31,3 +31,92 @@
 #info_terre{margin-top: 150px;margin-left: 200px;}
 #info_lune{margin-top: 150px;margin-left: 300px;}
 }
+
+@keyframes anim-stars {
+from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+#stars1, #stars1:after {
+  background: transparent;
+  height: 1px;
+  width: 1px;
+  box-shadow:  447px   17px #FFFFFF,  144px   86px #FFFFFF,  236px  320px #FFFFFF,   66px  302px #FFFFFF,  136px   23px #FFFFFF,  103px  355px #FFFFFF,  208px  416px #FFFFFF,  361px  352px #FFFFFF,   65px  300px #FFFFFF,  122px  219px #FFFFFF,  297px  129px #FFFFFF,  403px  279px #FFFFFF,   73px  261px #FFFFFF,  355px  106px #FFFFFF,   34px  104px #FFFFFF,  265px  411px #FFFFFF,  235px  472px #FFFFFF,    4px  358px #FFFFFF,  325px  460px #FFFFFF,  409px   69px #FFFFFF,  107px   47px #FFFFFF,   33px  148px #FFFFFF,   80px  420px #FFFFFF,   80px  428px #FFFFFF,  400px    7px #FFFFFF,  166px  197px #FFFFFF,  201px  379px #FFFFFF,  125px  251px #FFFFFF,  486px    4px #FFFFFF,  370px  406px #FFFFFF,  487px  293px #FFFFFF,   29px    4px #FFFFFF,   55px  259px #FFFFFF,   60px  120px #FFFFFF,   12px  487px #FFFFFF,  321px   90px #FFFFFF,  448px  230px #FFFFFF,  382px  353px #FFFFFF,  311px  389px #FFFFFF,   87px  325px #FFFFFF,   69px  101px #FFFFFF,  296px  384px #FFFFFF,   83px   19px #FFFFFF,  143px  193px #FFFFFF,   97px  145px #FFFFFF,  385px  208px #FFFFFF,  378px  285px #FFFFFF,   16px  237px #FFFFFF,    5px  278px #FFFFFF,  474px  333px #FFFFFF;
+}
+
+#stars1:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+}
+
+#stars1 {
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-name: anim-stars;
+  animation-timing-function: linear;
+}
+
+#stars2, #stars2:after {
+  background: transparent;
+  height: 2px;
+  width: 2px;
+  box-shadow:  205px  238px #a1a1a1,   89px  399px #e7e7e7,   54px  175px #e7e7e7,  154px  234px #e4e4e4,  490px  156px #f6f6f6,   10px  403px #8b8b8b,  284px  386px #a5a5a5,  308px  413px #e7e7e7,   72px  398px #989898,    6px  197px #b2b2b2,  480px   37px #b9b9b9,  353px   52px #d0d0d0;
+}
+
+#stars2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+}
+
+#stars2 {
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-name: anim-stars;
+  animation-timing-function: linear;
+}
+
+#stars3, #stars3:after {
+  background: transparent;
+  height: 3px;
+  width: 3px;
+  box-shadow:  246px  176px #FFFF99,   47px  216px #FFFFba;
+}
+
+#stars3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+}
+
+#stars3 {
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-name: anim-stars;
+  animation-timing-function: linear;
+}
+
+#stars4, #stars4:after {
+  background: transparent;
+  height: 4px;
+  width: 4px;
+  box-shadow:  125px  137px #e5ebFF;
+}
+
+#stars4:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+}
+
+#stars4 {
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-name: anim-stars;
+  animation-timing-function: linear;
+}
+
