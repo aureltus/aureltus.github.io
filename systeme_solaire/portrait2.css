@@ -50,12 +50,12 @@
 #cadre_terre,
 #cadre_soleil,
 #cadre_lune{
-    width:250px;
+    width:600px;
     padding:10px;
 
     font-size:13px;
     margin-left: -150px;
-    margin-top: 850px;
+    margin-top: 1250px;
 
 }
 
@@ -63,7 +63,7 @@
 #info_soleil:hover ~ #cadre_soleil,
 #info_lune:hover ~ #cadre_lune{
     opacity: 1;
-    margin-left: -10px;
+    margin-left: 50px;
     transition: all 0.4s;
 }
 
