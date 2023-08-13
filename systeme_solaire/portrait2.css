@@ -1,10 +1,11 @@
 @media screen and (min-width: 720px){
-main{transform: scale(3)}
   .lien{position: absolute; left: 0; right: 20; padding: 5%;}
     #soleil {
-      margin-top: 350px;
-      margin-left: 150px;
-      transform: scale(1);}
+      /*margin-top: 350px;
+      margin-left: 150px;*/
+      margin-top: 750px;
+      margin-left: 450px;
+      transform: scale(3);}
       @keyframes pulse {
         /*0%{transform: scale(1);}*/
         05%{transform: scale(1);}
@@ -18,9 +19,11 @@ main{transform: scale(3)}
     }
 
     #terre{
-      margin-top: 275px;
-      margin-left: 75px;
-      transform: scale(1);
+      /*margin-top: 275px;
+      margin-left: 75px;*/
+      margin-top: 675px;
+      margin-left: 375px;
+      transform: scale(3);
   }
   @keyframes orbite_terre {
     from { transform: rotate(180deg) translateY(-125px)scale(1);}
