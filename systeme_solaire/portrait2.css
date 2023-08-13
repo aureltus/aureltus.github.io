@@ -1,6 +1,6 @@
 @media screen and (min-width: 720px){
 
-  .lien{position: absolute; left: 0; right: 20; padding: 1%;}
+  .lien{position: absolute; left: 0; right: 20; padding: 5%;}
     #soleil {
       margin-top: 350px;
       margin-left: 150px;
@@ -37,7 +37,7 @@ from {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-1000px);
+    transform: translateY(-500px);
   }
 }
 #stars1, #stars1:after {
@@ -50,7 +50,7 @@ from {
 #stars1:after {
   content: " ";
   position: absolute;
-  top: 1000px;
+  top: 500px;
 }
 
 #stars1 {
@@ -70,7 +70,7 @@ from {
 #stars2:after {
   content: " ";
   position: absolute;
-  top: 1000px;
+  top: 500px;
 }
 
 #stars2 {
@@ -90,7 +90,7 @@ from {
 #stars3:after {
   content: " ";
   position: absolute;
-  top: 1000px;
+  top: 500px;
 }
 
 #stars3 {
@@ -110,7 +110,7 @@ from {
 #stars4:after {
   content: " ";
   position: absolute;
-  top: 1000px;
+  top: 500px;
 }
 
 #stars4 {
