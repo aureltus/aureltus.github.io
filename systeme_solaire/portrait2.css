@@ -8,7 +8,7 @@
   .text:hover{
    font-size: 64px;
 }
-  #lune.orbite{transform: scale(1);}
+  #lune.orbite{border: 1px solid rgba(255, 255, 255, 0.2);}
     #soleil {
       /*margin-top: 350px;
       margin-left: 150px;*/
