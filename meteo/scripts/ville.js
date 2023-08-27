@@ -8,7 +8,7 @@ function fetchCity() {
 
 // recuperation des donnees sur un serveur (utilisation en local)
 function fetchCityServer() {
-  fetch("https://aureltus.github.io/conf.json")
+  fetch("https://aureltus.github.io/meteo/conf.json")
     .then(response => response.json()) 
     .then(result => cityJson(result))
     .catch(() => {textError("erreur recuperation de la ville sur le serveur")}) 
