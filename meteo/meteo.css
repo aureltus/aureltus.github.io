@@ -181,6 +181,7 @@ p{color: lightslategray;}
 
     .wrapper {
         width: 85%;
+        margin-top: 15px;
     }
 
     .weather-part1 {
