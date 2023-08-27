@@ -1,44 +1,119 @@
-main{
-display: grid;
-justify-content: center;
-gap: 2%;
+/* Utilisation des variables pour les couleurs */
+:root {
+    --main-bg-color: #0d001f;
+    --secondary-bg-color: #1d003d;
+    --text-color: #e3e4e8;
+    --accent-color: #08068f;
+    --border-color: #4100b8;
+    --neutral-color: #525252;
+    --header-color: rgb(180, 180, 193);
+  }
 
+*{    
+    margin: 0;
+    padding: 0;
+  }
+  
+    /* Styles généraux du document */
+  body {
+    background: linear-gradient(var(--main-bg-color), var(--secondary-bg-color)) no-repeat fixed;
+    font-family: 'Roboto', sans-serif;
 
-}
-
-a{
-    display: block;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 25px;
-    color: rgb(10, 1, 16);
-    border: 1px solid rgb(17, 9, 2);
-    padding: 1%;
-    border-radius: 3px;
-    background-color: rgb(108, 106, 106);
-    text-align: center;
-    width: auto;
-    height: auto;
-    transition: 0.3s;
-    text-decoration : none;
-}
-
-a:hover{
-background-color: rgb(50, 45, 45);
-transform: scale(1.02);
-color: #c1c2c9;
-
-}
-
-
-body{
-    background: linear-gradient(#2d0541, #161a48) no-repeat fixed; 
-}
-header{
+  }
+  
+  /* En-tête */
+  header {
+    display: flex;
     justify-content: center;
-    display: grid;
-    margin-top: 10px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 40px;
-    color: rgb(122, 118, 125);
-    margin-bottom: 50px;
+    margin: 20px 0px;
+    font-size: 48px;
+    color: var(--header-color);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+
+  }
+  
+header:hover::before,
+header:hover::after {
+  content: attr(data-text);
+  position: absolute;
+  color: #00ffcc; /* Couleur du premier doublon */
+  animation: glitch 1.5s infinite;
 }
+
+header:hover::after {
+  color: #ff0066; /* Couleur du deuxième doublon */
+  animation-delay: 0.75s;
+}
+  
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  10%, 90% {
+    transform: translate(-2px, -2px) rotate(-0.5deg);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+  20%, 80% {
+    transform: translate(2px, -2px) rotate(0.5deg);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  30%, 70% {
+    transform: translate(-2px, 2px) rotate(-0.5deg);
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+  }
+  40%, 60% {
+    transform: translate(2px, 2px) rotate(0.5deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+
+  /* Contenu principal */
+  main {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 2%;
+    padding: 40px;
+
+ 
+  }
+  
+  /* Liens */
+  a {
+    display: inline-block;
+    font-size: 18px;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s, border-color 0.3s;
+
+  }
+  
+  a:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    color: var(--main-bg-color);
+    
+  }
+
+  @keyframes textAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }

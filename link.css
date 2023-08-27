@@ -1,0 +1,41 @@
+.lien{
+    
+    position: absolute; left: 10px; top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    width: 50px;
+    height: 20px;
+    color: rgb(0, 0, 0);
+    background-color: #053552;
+    border: 1px solid #24485d;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    transition: all 1s;
+    overflow: hidden;
+    z-index: 1;
+}
+  
+.lien::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #010003;
+    transition: all 1s;
+    z-index: -1;
+    transform: translateX(-100%);
+}
+    
+.lien:hover::before {
+
+  transform: translateX(0);
+}
+  
+.lien:hover {
+  color: #fff;
+}
