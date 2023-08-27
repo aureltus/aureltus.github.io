@@ -23,7 +23,7 @@ function cityJson(info) {
 }
 
 function fetchCityServerPrev() {
-  fetch("https://aureltus.github.io/conf.json")
+  fetch("https://aureltus.github.io/meteo/conf.json")
     .then(response => response.json()) 
     .then(result => prevision(result))
     .catch(() => {textError("erreur recuperation de la ville sur le serveur")}) 
