@@ -1,0 +1,47 @@
+@media screen and (min-width: 720px){
+
+p {color: rgb(203, 168, 158);}
+
+.block {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    width: 85%;
+    background: #0d40ace0;
+}
+
+.weather-part1 {
+    width: 100%;
+    height: 40em;
+    border-right: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+}
+
+#weatherIcon{height: 20em;width: 20em;margin-top: 4em;}
+
+.weather, .temp, .location{font-size: 2.5em;}
+
+.location{margin-bottom: 1em;}
+
+.weather-part2 {
+    width: 100%;
+    height: 60em;
+    line-height: 1em;}
+
+.icon{
+    width: 2.5em;
+    height: 2.5em;
+
+}
+
+.line{font-size: 3em;}
+
+.line_feels{margin-top: 0.6em;}
+
+.line_3h{margin-top: 0.6em;}
+
+.line_3h, .line_6h, .line_9h, .line_12h, .line_15h{font-size: 2.5em;}
+
+}
