@@ -1,39 +1,38 @@
 /* Utilisation des variables pour les couleurs */
 :root {
-    --main-bg-color: #0d001f;
-    --secondary-bg-color: #1d003d;
-    --text-color: #e3e4e8;
-    --accent-color: #08068f;
-    --border-color: #4100b8;
-    --neutral-color: #525252;
-    --header-color: rgb(180, 180, 193);
-  }
+  --main-bg-color: #0d001f;
+  --secondary-bg-color: #1d003d;
+  --text-color: #e3e4e8;
+  --accent-color: #08068f;
+  --border-color: #4100b8;
+  --neutral-color: #525252;
+  --header-color: rgb(180, 180, 193);
+}
 
-*{    
-    margin: 0;
-    padding: 0;
-  }
-  
-    /* Styles généraux du document */
-  body {
-    background: linear-gradient(var(--main-bg-color), var(--secondary-bg-color)) no-repeat fixed;
-    font-family: 'Roboto', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  }
-  
-  /* En-tête */
-  header {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0px;
-    font-size: 48px;
-    color: var(--header-color);
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+/* Styles généraux du document */
+body {
+  background: linear-gradient(var(--main-bg-color), var(--secondary-bg-color))
+    no-repeat fixed;
+  font-family: "Roboto", sans-serif;
+}
 
-  }
-  
+/* En-tête */
+header {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+  font-size: 48px;
+  color: var(--header-color);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
 header:hover::before,
 header:hover::after {
   content: attr(data-text);
@@ -46,25 +45,30 @@ header:hover::after {
   color: #ff0066; /* Couleur du deuxième doublon */
   animation-delay: 0.75s;
 }
-  
+
 @keyframes glitch {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) rotate(0);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-  10%, 90% {
+  10%,
+  90% {
     transform: translate(-2px, -2px) rotate(-0.5deg);
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
   }
-  20%, 80% {
+  20%,
+  80% {
     transform: translate(2px, -2px) rotate(0.5deg);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
-  30%, 70% {
+  30%,
+  70% {
     transform: translate(-2px, 2px) rotate(-0.5deg);
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
   }
-  40%, 60% {
+  40%,
+  60% {
     transform: translate(2px, 2px) rotate(0.5deg);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   }
@@ -74,46 +78,42 @@ header:hover::after {
   }
 }
 
+/* Contenu principal */
+main {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 2%;
+  padding: 40px;
+}
 
-  /* Contenu principal */
-  main {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    gap: 2%;
-    padding: 40px;
+/* Liens */
+a {
+  display: inline-block;
+  font-size: 18px;
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s,
+    border-color 0.3s;
+}
 
- 
-  }
-  
-  /* Liens */
-  a {
-    display: inline-block;
-    font-size: 18px;
-    color: var(--text-color);
-    border: 2px solid var(--border-color);
-    padding: 10px 20px;
-    border-radius: 30px;
-    background-color: transparent;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s, color 0.3s, border-color 0.3s;
+a:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  color: var(--main-bg-color);
+}
 
+@keyframes textAnimation {
+  0% {
+    transform: scale(1);
   }
-  
-  a:hover {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    transform: translateY(-5px);
-    color: var(--main-bg-color);
-    
+  100% {
+    transform: scale(1.1);
   }
-
-  @keyframes textAnimation {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.1);
-    }
-  }
+}
