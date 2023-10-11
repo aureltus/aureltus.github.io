@@ -14,9 +14,9 @@ setInterval(() => {
 
 let counter = 1;
 setInterval(() => {
-  if (counter++ % 2) {
+  if (counter++ % 2) {console.log("1er ",counter);
     switchLine(1); // affiche les donnees actuelles
-  } else {
+  } else {console.log("2eme ",counter);
     switchLine(2); // affiche les previsions
   }
 }, 10000);
