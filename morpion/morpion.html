@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morpion</title>
+    <script type="module" src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <nav id="navBar">
+      <div class="joueur j1">
+        <div class="player1">Nom joueur</div>
+        <img class="player1 avatar" src="./avatarDef.jpg" alt="avatar" />
+        <div class="player1">nom personnage</div>
+        <div class="player1">age</div>
+        <div class="player1">description</div>
+        <div class="player1">phrase</div>
+        <div class="player1">signe</div>
+        <div class="player1">score</div>
+      </div>
+      <div class="joueur j2">
+        <div class="player2">Nom joueur</div>
+        <img class="player2 avatar" src="./avatarDef.jpg" alt="avatar" />
+        <div class="player2">nom personnage</div>
+        <div class="player2">age</div>
+        <div class="player2">description</div>
+        <div class="player2">phrase</div>
+        <div class="player2">signe</div>
+        <div class="player2">score</div>
+      </div>
+    </nav>
+    <h1>Morpion</h1>
+    <p>c'est à <span class="joueur_en_cours">J1</span> de jouer !</p>
+    <div id="test">
+      <div id="grille">
+        <div id="case1" class="case"></div>
+        <div id="case2" class="case"></div>
+        <div id="case3" class="case"></div>
+        <div id="case4" class="case"></div>
+        <div id="case5" class="case"></div>
+        <div id="case6" class="case"></div>
+        <div id="case7" class="case"></div>
+        <div id="case8" class="case"></div>
+        <div id="case9" class="case"></div>
+      </div>
+    </div>
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h2>
+          Entrez un nom et choisissez un personnage pour le joueur
+          <span id="h2Joueur">1</span>
+        </h2>
+        <input type="text" id="nom" placeholder="Nom" />
+        <select id="personnage">
+          <!-- Options pour choisir un personnage -->
+          <option value="">Choisir personnage</option>
+          <option value="0">Alice</option>
+          <option value="1">Charlie</option>
+          <option value="2">Eva</option>
+          <option value="3">Frankie</option>
+          <option value="4">Olivia</option>
+          <option value="5">Sailor Moon</option>
+          <option value="6">Naruto Uzumaki</option>
+          <option value="7">Monkey D. Luffy</option>
+          <option value="8">Goku</option>
+          <option value="9">Sakura Kinomoto</option>
+          <option value="10">Harry Potter</option>
+          <option value="11">Hermione Granger</option>
+          <option value="12">Ron Weasley</option>
+          <option value="13">Dumbledore</option>
+          <option value="14">Bulma</option>
+          <!-- Ajoutez d'autres options pour plus de personnages -->
+        </select>
+        <button id="soumettre">Soumettre</button>
+        <button id="soumettre2">Soumettre</button>
+      </div>
+    </div>
+  </body>
+</html>
