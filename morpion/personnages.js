@@ -49,7 +49,7 @@ const personnages = [
   {
     nom: "Sailor Moon",
     age: 16,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/sailor Moon.jpg",
     description: "Gardienne de l'amour et de la justice",
     victoire: "Au nom de la Lune, je te punirai!",
     signe: "S",
@@ -58,7 +58,7 @@ const personnages = [
   {
     nom: "Naruto Uzumaki",
     age: 17,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/naruto uzumaki.jpg",
     description: "Ninja aux rêves de devenir Hokage",
     victoire: "Je ne reviens jamais sur ma parole!",
     signe: "N",
@@ -67,7 +67,7 @@ const personnages = [
   {
     nom: "Monkey D. Luffy",
     age: 19,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/monkey D. Luffy.jpg",
     description: "Capitaine des Pirates au Chapeau de Paille",
     victoire: "Je serai le Roi des Pirates!",
     signe: "M",
@@ -76,7 +76,7 @@ const personnages = [
   {
     nom: "Goku",
     age: 35,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/goku.jpg",
     description: "Saiyan légendaire et défenseur de la Terre",
     victoire: "Kamehameha!",
     signe: "G",
@@ -85,7 +85,7 @@ const personnages = [
   {
     nom: "Sakura Kinomoto",
     age: 13,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/Sakura Kinomoto.jpg",
     description: "Magicienne en herbe",
     victoire: "Carte Clow, change de forme!",
     signe: "S",
@@ -94,7 +94,7 @@ const personnages = [
   {
     nom: "Harry Potter",
     age: 17,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/Harry Potter.jpg",
     description: "Le sorcier qui a survécu à Voldemort",
     victoire: "Expelliarmus!",
     signe: "P",
@@ -103,7 +103,7 @@ const personnages = [
   {
     nom: "Hermione Granger",
     age: 18,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/Hermione Granger.jpg",
     description: "L'intelligente et talentueuse sorcière",
     victoire: "Accio!",
     signe: "H",
@@ -112,7 +112,7 @@ const personnages = [
   {
     nom: "Ron Weasley",
     age: 18,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/Ron Weasley.jpg",
     description: "Le fidèle ami et camarade de Harry",
     victoire: "Alohomora!",
     signe: "R",
@@ -121,7 +121,7 @@ const personnages = [
   {
     nom: "Dumbledore",
     age: 115,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/Dumbledore.jpg",
     description: "Le directeur de Poudlard",
     victoire: "Nitwit! Blubber! Oddment! Tweak!",
     signe: "D",
@@ -130,11 +130,38 @@ const personnages = [
   {
     nom: "Bulma",
     age: 30,
-    avatar: "Lien_vers_image",
+    avatar: "./avatar/Bulma.png",
     description: "Scientifique brillante et aventurière",
     victoire: "Capsule Corp!",
     signe: "B",
     phrase: "L'avenir est fait de science et d'aventure.",
+  },
+  {
+    nom: "Sophie",
+    age: 25,
+    avatar: "./avatar/sophie.jpg",
+    description: "Artiste peintre talentueuse",
+    victoire: "Les couleurs sont mon langage",
+    signe: "So",
+    phrase: "Je peins le monde à ma façon",
+  },
+  {
+    nom: "Léa",
+    age: 29,
+    avatar: "./avatar/lea.jpg",
+    description: "Exploratrice intrépide",
+    victoire: "La découverte est ma passion",
+    signe: "L",
+    phrase: "À la recherche de l'inconnu",
+  },
+  {
+    nom: "Camille",
+    age: 31,
+    avatar: "./avatar/camille.jpg",
+    description: "Astronome éminente",
+    victoire: "Les étoiles me guident",
+    signe: "Ca",
+    phrase: "À la conquête de l'univers",
   },
   // Ajoutez d'autres personnages ici
 ];

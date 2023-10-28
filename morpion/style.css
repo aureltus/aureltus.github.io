@@ -71,8 +71,7 @@ p {
   display: block;
   height: 15dvh;
   width: 15dvh;
-  /*margin: auto;*/
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .player1:first-child,
