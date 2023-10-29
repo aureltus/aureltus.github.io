@@ -2,24 +2,30 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: rgb(101, 91, 77);
+  width: 80%;
 }
 
-#test {
-  width: 70%;
+#weapper {
+  width: 80%;
   height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 h1 {
   padding: 3%;
-  text-indent: 30%;
+  text-align: center;
 }
 
 p {
   font-size: larger;
-  text-indent: 30%;
+  text-align: center;
 }
+
 #grille {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -34,14 +40,13 @@ p {
   width: 40dvh;
   position: absolute;
   top: 50%;
-  left: 30%;
-  transform: translate(-30%, -50%);
+  left: 40%;
+  transform: translate(-40%, -50%);
+  z-index: -1;
 }
 
 #grille div {
   border: inset 1px black;
-  /* height: 33%;
-  width: 33%;*/
 }
 
 .case {
@@ -58,20 +63,24 @@ p {
   right: 0;
   background-color: rgba(94, 11, 87, 0.76);
   border-left: inset 1px black;
-  width: 30%;
+  width: 20%;
   height: 100%;
 }
 
 .joueur {
-  height: 45%;
-  margin-left: 10%;
+  box-sizing: border-box;
+  height: 50%;
+  padding-left: 10%;
 }
 
 .avatar {
-  display: block;
   height: 15dvh;
   width: 15dvh;
   border-radius: 10px;
+}
+
+.joueur:first-child {
+  border-bottom: solid 1px black;
 }
 
 .player1:first-child,
@@ -85,6 +94,11 @@ p {
 .player1:nth-child(3),
 .player2:nth-child(3) {
   font-size: larger;
+}
+
+.player1:nth-child(6),
+.player2:nth-child(6) {
+  font-style: italic;
 }
 
 .popup {
@@ -125,20 +139,25 @@ p {
   margin-top: 2%;
 }
 
-@media screen and (max-width: 720px) {
-  h1,
-  p {
-    text-indent: 25%;
+@media screen and (max-width: 960px) {
+  body,
+  #weapper,
+  #navBar {
+    width: 30%;
   }
 
   #grille {
-    height: 30dvh;
-    width: 30dvh;
+    left: 30%;
+    transform: translate(-30%, -50%);
   }
 }
 
 @media screen and (max-width: 540px) {
-  #test {
+  body {
+    width: 100%;
+  }
+
+  #weapper {
     width: 100%;
     height: 70%;
   }
@@ -157,22 +176,41 @@ p {
   }
 
   #grille {
+    height: 30dvh;
+    width: 30dvh;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -30%);
   }
 
+  .joueur:first-child {
+    border-bottom: none;
+    border-right: solid 1px black;
+  }
+
   .joueur {
     margin-left: 0%;
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
   }
-  h1,
-  p {
-    text-indent: 0%;
-    text-align: center;
-  }
+
   .avatar {
     height: 10dvh;
     width: 10dvh;
+  }
+
+  .player1:first-child,
+  .player2:first-child {
+    font-size: large;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: -5%;
+  }
+
+  .player1:nth-child(3),
+  .player2:nth-child(3) {
+    font-size: medium;
   }
 
   .player1:nth-child(n + 4):nth-child(-n + 6),
@@ -181,9 +219,4 @@ p {
     height: 0px;
     width: 0px;
   }
-}
-
-.player1,
-.player2 {
-  padding-top: 02%;
 }
