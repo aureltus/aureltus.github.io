@@ -17,7 +17,7 @@ class Joueur {
 }
 
 let jo1; //= new Joueur("Gérard", "J1", personnages[0]);
-let jo2 = new Joueur("Martin", "J2", personnages[1]);
+let jo2; //= new Joueur("Martin", "J2", personnages[1]);
 
 /*class Personnage {
   constructor(nom, age, avatar, description, victoire, signe, phrase) {
