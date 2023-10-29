@@ -141,7 +141,10 @@ p {
 
 @media screen and (max-width: 960px) {
   body,
-  #weapper,
+  #weapper {
+    width: 70%;
+  }
+
   #navBar {
     width: 30%;
   }
