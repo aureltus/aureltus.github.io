@@ -35,8 +35,9 @@
     </nav>
     <div id="weapper">
       <h1>Morpion</h1>
-      <p>c'est à <span class="joueur_en_cours">J1</span> de jouer !</p>
-
+      <p class="annonce">
+        c'est à <span class="joueur_en_cours">J1</span> de jouer !
+      </p>
       <div id="grille">
         <div id="case1" class="case"></div>
         <div id="case2" class="case"></div>
@@ -55,8 +56,8 @@
           Entrez un nom et choisissez un personnage pour le joueur
           <span id="h2Joueur">1</span>
         </h2>
-        <input type="text" id="nom" placeholder="Nom" />
-        <select id="personnage">
+        <input type="text" id="nom" placeholder="Nom" value="J1" />
+        <select id="personnage" size="1">
           <!-- Options pour choisir un personnage -->
           <option value="0">Alice</option>
           <option value="1">Charlie</option>

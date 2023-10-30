@@ -98,7 +98,7 @@ const personnages = [
     description: "Le sorcier qui a survécu à Voldemort",
     victoire: "Expelliarmus!",
     signe: "P",
-    phrase: "Je suis un sorcier, Harry.",
+    phrase: "Je suis un sorcier.",
   },
   {
     nom: "Hermione Granger",

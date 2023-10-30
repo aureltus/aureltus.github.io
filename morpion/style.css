@@ -20,7 +20,7 @@ h1 {
   text-align: center;
 }
 
-p {
+.annonce {
   font-size: larger;
   text-align: center;
 }
@@ -126,6 +126,13 @@ p {
   text-align: center;
 }
 
+select option {
+  color: #333;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
 #soumettre {
   display: block;
   margin: auto;
@@ -212,5 +219,35 @@ p {
     display: none;
     height: 0px;
     width: 0px;
+  }
+}
+
+.pop span {
+  display: inline-block;
+  color: red;
+  text-align: center;
+  animation: pulse 3s infinite; /* Applique l'animation "pulse" pendant 2 secondes en boucle */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(0.9); /* À 50 % de l'animation, agrandir de 20 % */
+  }
+
+  40% {
+    transform: scale(1.4); /* À 50 % de l'animation, agrandir de 20 % */
+  }
+  60% {
+    transform: scale(1); /* À 50 % de l'animation, agrandir de 20 % */
+  }
+  80% {
+    transform: scale(1.4); /* À 50 % de l'animation, agrandir de 20 % */
+  }
+  100% {
+    transform: scale(1);
   }
 }
