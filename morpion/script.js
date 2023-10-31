@@ -60,7 +60,7 @@ function soumettre() {
 
   // Faites quelque chose avec le nom et le personnage (par exemple, les enregistrer ou les utiliser dans votre jeu)
 
-  document.getElementById("nom").value = /*"";*/ "J2";
+  document.getElementById("nom").value = "J2";
   document.getElementById("personnage").value = `${
     Number(i) >= i.length ? Number(i) - 1 : Number(i) + 1
   }`;
@@ -70,12 +70,14 @@ function soumettre() {
 }
 
 function soumettreJ2() {
-  const nom = document.getElementById("nom").value;
+  const nom = document.getElementById("nom");
   const i = document.getElementById("personnage").value;
-  if (nom === "" || i === "") {
+  if (nom.value === "" || i === "") {
     return;
+  } else if (nom.value === Joueur1.nomJoueur) {
+    nom.value += "²";
   }
-  Joueur2 = new Joueur(nom, "J2", personnages[i]);
+  Joueur2 = new Joueur(nom.value, "J2", personnages[i]);
 
   const selectPersonnage = document.getElementById("personnage");
   const option = selectPersonnage.options[i];
@@ -144,6 +146,7 @@ function checkWin() {
       player1[7].innerHTML = `Score: ${Joueur1.score}`;
       player2[7].innerHTML = `Score: ${Joueur2.score}`;
       popColor(caseGrille[a], caseGrille[b], caseGrille[c]);
+      victory();
 
       setTimeout(() => resetGrille(), 3000);
       console.log("joueur 1 :", Joueur1.score, "joueur 2:", Joueur2.score);
@@ -201,6 +204,7 @@ function checkNull() {
 
   if (!auMoinsUneCaseEstVide) {
     popReduce();
+    victory(1);
     setTimeout(() => resetGrille(), 3000);
   }
 }
@@ -240,4 +244,28 @@ function playerDom() {
   player2[5].innerHTML = `${Joueur2.personnage.phrase}`;
   player2[6].innerHTML = `Signe: ${Joueur2.personnage.signe}`;
   player2[7].innerHTML = `Score: ${Joueur2.score}`;
+}
+
+function victory(a) {
+  const visible = document.querySelector(".isFinish");
+  const avatar = document.getElementById("icon");
+  const text = document.getElementById("vic");
+  const name = document.getElementById("namePerso");
+  if (a === 1) {
+    avatar.src = "./avatar/mj.jpg";
+    name.innerText = `MJ :`;
+    text.innerText = "Aucun des deux joueurs n'a réussi à prendre l'avantage";
+  } else {
+    if (joueurEnCours === Joueur1.nomJoueur) {
+      avatar.src = `${Joueur1.personnage.avatar}`;
+      name.innerText = `${Joueur1.personnage.nom} :`;
+      text.innerText = Joueur1.personnage.victoire;
+    } else {
+      avatar.src = `${Joueur2.personnage.avatar}`;
+      name.innerText = `${Joueur2.personnage.nom} :`;
+      text.innerText = Joueur2.personnage.victoire;
+    }
+  }
+  visible.style.display = "flex";
+  setTimeout(() => (visible.style.display = "none"), 3000);
 }
