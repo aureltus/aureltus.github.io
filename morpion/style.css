@@ -44,7 +44,7 @@ h1 {
 }
 
 #grille div {
-  border: inset 1px black;
+  border: solid 1px black;
 }
 
 .case {
@@ -73,9 +73,16 @@ h1 {
 }
 
 .avatar {
+  position: relative;
   height: 15dvh;
   width: 15dvh;
   border-radius: 10px;
+  border: solid 1px black;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
 }
 
 .joueur:first-child {
@@ -107,12 +114,7 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Fond semi-transparent pour l'effet de superposition */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
@@ -121,13 +123,35 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  border: solid 1px rgb(20, 19, 19);
+  background-color: #460707d5;
+  box-shadow: 25px 25px 15px 5px #000000cc;
+  border-radius: 5px;
   padding: 20px;
   text-align: center;
 }
 
+h2 {
+  padding-bottom: 20px;
+}
+
+.red {
+  background-color: rgba(113, 23, 23, 0.912);
+}
+
+select {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+#nom {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
 select option {
-  color: #333;
   padding: 0;
   margin: 0;
   overflow: auto;
@@ -135,14 +159,29 @@ select option {
 
 #soumettre {
   display: block;
-  margin: auto;
-  margin-top: 2%;
 }
 
 #soumettre2 {
   display: none;
+}
+
+.btn {
   margin: auto;
   margin-top: 2%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+.btn:hover {
+  background-color: #922828; /* Nouvelle couleur de fond au survol */
+}
+
+.btn:active {
+  background-color: #6c1a1a; /* Nouvelle couleur de fond lors de l'activation */
 }
 
 @media screen and (max-width: 960px) {
@@ -226,7 +265,13 @@ select option {
   display: inline-block;
   color: red;
   text-align: center;
-  animation: pulse 3s infinite; /* Applique l'animation "pulse" pendant 2 secondes en boucle */
+  animation: pulse 3s infinite;
+}
+
+.popReduce span {
+  display: inline-block;
+  color: rgb(29, 3, 3);
+  animation: reduce 3.5s ease;
 }
 
 @keyframes pulse {
@@ -235,19 +280,33 @@ select option {
   }
 
   20% {
-    transform: scale(0.9); /* À 50 % de l'animation, agrandir de 20 % */
+    transform: scale(0.9);
   }
 
   40% {
-    transform: scale(1.4); /* À 50 % de l'animation, agrandir de 20 % */
+    transform: scale(1.4);
   }
+
   60% {
-    transform: scale(1); /* À 50 % de l'animation, agrandir de 20 % */
+    transform: scale(1);
   }
+
   80% {
-    transform: scale(1.4); /* À 50 % de l'animation, agrandir de 20 % */
+    transform: scale(1.4);
   }
+
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes reduce {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
   }
 }

@@ -143,7 +143,7 @@ function checkWin() {
       }`;
       player1[7].innerHTML = `Score: ${Joueur1.score}`;
       player2[7].innerHTML = `Score: ${Joueur2.score}`;
-      TestColor(caseGrille[a], caseGrille[b], caseGrille[c]);
+      popColor(caseGrille[a], caseGrille[b], caseGrille[c]);
 
       setTimeout(() => resetGrille(), 3000);
       console.log("joueur 1 :", Joueur1.score, "joueur 2:", Joueur2.score);
@@ -154,7 +154,7 @@ function checkWin() {
   return false;
 }
 
-function TestColor(a, b, c) {
+function popColor(a, b, c) {
   resetIsRun = true;
   a.classList.add("pop");
   b.classList.add("pop");
@@ -170,7 +170,26 @@ function TestColor(a, b, c) {
   );
 }
 
+function popReduce() {
+  resetIsRun = true;
+  caseGrille.forEach((element) => {
+    element.classList.add("popReduce");
+  });
+  setTimeout(
+    () => (
+      (resetIsRun = false),
+      caseGrille.forEach((element) => {
+        element.classList.remove("popReduce");
+      })
+    ),
+    3000
+  );
+}
+
 function checkNull() {
+  if (resetIsRun) {
+    return;
+  }
   let auMoinsUneCaseEstVide = false;
   caseGrille.forEach((element) => {
     const contenu = element.textContent.trim(); // Utilisez trim() pour supprimer les espaces vides éventuels autour du contenu.
@@ -181,6 +200,7 @@ function checkNull() {
   });
 
   if (!auMoinsUneCaseEstVide) {
+    popReduce();
     setTimeout(() => resetGrille(), 3000);
   }
 }
