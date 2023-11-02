@@ -7,7 +7,7 @@ const personnages = [
     avatar: "./avatar/alice.jpg",
     description: "Magicienne talentueuse",
     victoire: [
-      "La magie est mon alliée",
+      "La magie est mon alliée.",
       "La magie triomphe encore !",
       "Mes pouvoirs sont inégalés !",
       "Une victoire digne d'une magicienne !",
@@ -22,7 +22,7 @@ const personnages = [
     avatar: "./avatar/charlie.jpg",
     description: "Championne de l'escalade",
     victoire: [
-      "J'atteins toujours le sommet",
+      "J'atteins toujours le sommet.",
       "Le sommet est à moi !",
       "Une autre victoire au sommet !",
       "Je suis la reine de la montagne !",
@@ -37,7 +37,7 @@ const personnages = [
     avatar: "./avatar/eva.jpg",
     description: "Ingénieure créative",
     victoire: [
-      "L'innovation est mon arme",
+      "L'innovation est mon arme.",
       "L'innovation l'emporte encore !",
       "Mon esprit créatif triomphe !",
       "Un avenir meilleur commence avec moi !",
@@ -52,7 +52,7 @@ const personnages = [
     avatar: "./avatar/frankie.jpg",
     description: "Chasseur de trésors intrépide",
     victoire: [
-      "L'or n'a pas de secrets pour moi",
+      "L'or n'a pas de secrets pour moi.",
       "Je suis la reine des chasseuses de trésors.",
       "Une autre fortune trouvée !",
       "Chaque victoire est une pièce d'or de plus.",
@@ -67,7 +67,7 @@ const personnages = [
     avatar: "./avatar/olivia.jpg",
     description: "Aventurière enthousiaste",
     victoire: [
-      "L'excitation est ma compagne",
+      "L'excitation est ma compagne.",
       "L'aventure est mon véritable trésor.",
       "Vers de nouvelles aventures gagnantes !",
       "L'inconnu n'a rien sur moi !",
@@ -232,7 +232,7 @@ const personnages = [
     avatar: "./avatar/sophie.jpg",
     description: "Artiste peintre talentueuse",
     victoire: [
-      "Les couleurs sont mon langage",
+      "Les couleurs sont mon langage.",
       "L'art est ma passion et ma victoire !",
       "Chaque toile est une victoire sur la vie !",
       "Sophie, l'artiste, crée la victoire avec des couleurs !",
@@ -247,7 +247,7 @@ const personnages = [
     avatar: "./avatar/lea.jpg",
     description: "Exploratrice intrépide",
     victoire: [
-      "La découverte est ma passion",
+      "La découverte est ma passion.",
       "L'exploration m'emmène vers la victoire !",
       "Les terres inconnues sont mon domaine de victoire !",
       "Léa, l'exploratrice intrépide, triomphe à chaque découverte !",

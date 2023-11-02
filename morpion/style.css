@@ -7,6 +7,70 @@ body {
   background-color: rgb(101, 91, 77);
 }
 
+.red {
+  background-color: rgba(113, 23, 23, 0.912);
+}
+
+/****************************************
+ * barre de navigation 
+ ****************************************/
+#navBar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  background-color: rgba(94, 11, 87, 0.76);
+  border-left: inset 1px black;
+  width: 20%;
+  height: 100%;
+}
+
+.joueur {
+  box-sizing: border-box;
+  height: 50%;
+  padding-left: 10%;
+  overflow: auto;
+}
+
+.joueur:first-child {
+  border-bottom: solid 1px black;
+}
+
+/*Nom joueur*/
+.player1:first-child,
+.player2:first-child {
+  font-size: x-large;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: -5%;
+}
+
+.avatar {
+  position: relative;
+  height: 15dvh;
+  width: 15dvh;
+  border-radius: 10px;
+  border: solid 1px black;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+/*nom perso*/
+.player1:nth-child(3),
+.player2:nth-child(3) {
+  font-size: larger;
+}
+/*Phrase perso*/
+.player1:nth-child(6),
+.player2:nth-child(6) {
+  font-style: italic;
+}
+
+/****************************************
+ * Weapper
+ ****************************************/
 #weapper {
   width: 80%;
   height: 100%;
@@ -25,6 +89,47 @@ h1 {
   text-align: center;
 }
 
+/****************************************
+ * popup victoire
+ ****************************************/
+.isFinish {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -5%);
+  border: solid 1px rgb(20, 19, 19);
+  background-color: #460707c3;
+  backdrop-filter: blur(3px);
+  box-shadow: 25px 25px 15px 5px #000000cc;
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 1;
+  display: none;
+  flex-direction: row;
+  justify-items: center;
+  align-items: start;
+  min-width: 35%;
+  max-width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#vic {
+  font-size: x-large;
+  padding: 5px;
+  padding-left: 15px;
+}
+
+#namePerso {
+  text-align: start;
+  font-size: x-large;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+/****************************************
+ * grille
+ ****************************************/
 #grille {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -54,59 +159,30 @@ h1 {
   font-size: xx-large;
 }
 
-#navBar {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 0;
-  background-color: rgba(94, 11, 87, 0.76);
-  border-left: inset 1px black;
-  width: 20%;
-  height: 100%;
-}
-
-.joueur {
-  box-sizing: border-box;
-  height: 50%;
-  padding-left: 10%;
-  overflow: auto;
-}
-
-.avatar {
-  position: relative;
-  height: 15dvh;
-  width: 15dvh;
-  border-radius: 10px;
+.pion {
+  height: 80%;
+  width: 80%;
   border: solid 1px black;
+  border-radius: 50%;
 }
 
-.avatar:hover {
-  transform: scale(1.1);
-  transition: all 0.5s;
+.signe {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
 }
 
-.joueur:first-child {
-  border-bottom: solid 1px black;
+.pop img {
+  animation: pulse 3s infinite;
 }
 
-.player1:first-child,
-.player2:first-child {
-  font-size: x-large;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-left: -5%;
+.popReduce img {
+  animation: reduce 3.5s ease;
 }
 
-.player1:nth-child(3),
-.player2:nth-child(3) {
-  font-size: larger;
-}
-
-.player1:nth-child(6),
-.player2:nth-child(6) {
-  font-style: italic;
-}
-
+/****************************************
+ * popup selection perso
+ ****************************************/
 .popup {
   display: none;
   position: fixed;
@@ -132,56 +208,17 @@ h1 {
   text-align: center;
 }
 
-.isFinish {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -5%);
-  border: solid 1px rgb(20, 19, 19);
-  background-color: #460707c3;
-  backdrop-filter: blur(3px);
-  box-shadow: 25px 25px 15px 5px #000000cc;
-  border-radius: 5px;
-  padding: 20px;
-  z-index: 1;
-  display: none;
-  flex-direction: row;
-  justify-items: center;
-  align-items: center;
-  min-width: 35%;
-  max-width: 85%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-#vic {
-  font-size: x-large;
-  padding: 5px;
-  padding-left: 15px;
-}
-
-#namePerso {
-  text-align: start;
-  font-size: x-large;
-  padding: 5px;
-  padding-left: 10px;
-}
-
 h2 {
   padding-bottom: 20px;
 }
 
-.red {
-  background-color: rgba(113, 23, 23, 0.912);
-}
-
-select {
+#nom {
   padding: 5px;
   border: solid 1px black;
   border-radius: 5px;
 }
 
-#nom {
+select {
   padding: 5px;
   border: solid 1px black;
   border-radius: 5px;
@@ -209,79 +246,51 @@ select option {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s; /* Transition pour l'effet de survol */
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #922828; /* Nouvelle couleur de fond au survol */
+  background-color: #922828;
 }
 
 .btn:active {
-  background-color: #6c1a1a; /* Nouvelle couleur de fond lors de l'activation */
+  background-color: #6c1a1a;
 }
 
-.pion {
-  height: 80%;
-  width: 80%;
-  border: solid 1px black;
-  border-radius: 50%;
-}
-
-.signe {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.pop img {
-  animation: pulse 3s infinite;
-}
-
-.popReduce img {
-  animation: reduce 3.5s ease;
-}
-
+/****************************************
+ * taille entre 541px et 960px
+ ****************************************/
 @media screen and (max-width: 960px) {
   body,
   #weapper {
     width: 70%;
   }
 
+  #navBar {
+    width: 30%;
+  }
+
   #nom {
     margin-bottom: 5px;
   }
 
-  #navBar {
-    width: 30%;
-  }
   .isFinish {
     white-space: wrap;
     width: 80%;
   }
 }
 
+/****************************************
+ * taille max 540px
+ ****************************************/
 @media screen and (max-width: 540px) {
   body {
     width: 100%;
   }
 
-  #weapper {
-    width: 100%;
-    height: 70%;
-  }
-
-  #namePerso {
-    font-size: medium;
-  }
-
-  #vic {
-    font-size: medium;
-  }
-
   #navBar {
     flex-direction: row;
     justify-content: space-around;
-    position: absolute;
     right: none;
     bottom: 0;
     background-color: rgba(94, 11, 87, 0.76);
@@ -289,11 +298,6 @@ select option {
     border-top: solid 1px black;
     width: 100%;
     height: 30%;
-  }
-
-  #grille {
-    height: 30dvh;
-    width: 30dvh;
   }
 
   .joueur:first-child {
@@ -308,11 +312,7 @@ select option {
     box-sizing: border-box;
   }
 
-  .avatar {
-    height: 10dvh;
-    width: 10dvh;
-  }
-
+  /*nom joueur*/
   .player1:first-child,
   .player2:first-child {
     font-size: large;
@@ -321,19 +321,44 @@ select option {
     margin-left: -5%;
   }
 
+  .avatar {
+    height: 10dvh;
+    width: 10dvh;
+  }
+
+  /*nom personnage*/
   .player1:nth-child(3),
   .player2:nth-child(3) {
     font-size: medium;
   }
 
+  /*age et description */
   .player1:nth-child(n + 4):nth-child(-n + 5),
   .player2:nth-child(n + 4):nth-child(-n + 5) {
     display: none;
     height: 0px;
     width: 0px;
   }
+
+  #weapper {
+    width: 100%;
+    height: 70%;
+  }
+
+  #namePerso,
+  #vic {
+    font-size: medium;
+  }
+
+  #grille {
+    height: 30dvh;
+    width: 30dvh;
+  }
 }
 
+/****************************************
+ * animation
+ ****************************************/
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -370,3 +395,4 @@ select option {
     opacity: 0;
   }
 }
+/************************************************************/
