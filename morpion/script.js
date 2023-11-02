@@ -7,6 +7,10 @@ const player2 = document.querySelectorAll(".player2");
 const j1 = document.getElementById("soumettre");
 const j2 = document.getElementById("soumettre2");
 
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 class Joueur {
   constructor(nomJoueur, joueur, personnage) {
     this.nomJoueur = nomJoueur;
@@ -255,11 +259,17 @@ function victory(a) {
     if (joueurEnCours === Joueur1.nomJoueur) {
       avatar.src = `${Joueur1.personnage.avatar}`;
       name.innerText = `${Joueur1.personnage.nom} :`;
-      text.innerText = Joueur1.personnage.victoire;
+      text.innerText =
+        Joueur1.personnage.victoire[
+          getRandomNumber(0, Joueur1.personnage.victoire.length - 1)
+        ];
     } else {
       avatar.src = `${Joueur2.personnage.avatar}`;
       name.innerText = `${Joueur2.personnage.nom} :`;
-      text.innerText = Joueur2.personnage.victoire;
+      text.innerText =
+        Joueur2.personnage.victoire[
+          getRandomNumber(0, Joueur2.personnage.victoire.length - 1)
+        ];
     }
   }
   visible.style.display = "flex";
