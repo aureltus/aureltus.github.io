@@ -8,6 +8,8 @@ import { personnages } from "./personnages.js";
 // Sélectionne des éléments HTML par leur classe ou ID et les stocke dans des variables
 const joueurAnnonce = document.querySelector(".joueur_en_cours");
 const caseGrille = document.querySelectorAll(".case");
+const nom = document.getElementById("nom");
+const selectPersonnage = document.getElementById("personnage");
 const player1 = document.querySelectorAll(".player1");
 const player2 = document.querySelectorAll(".player2");
 const j1 = document.getElementById("soumettre");
@@ -74,51 +76,51 @@ for (let i = 0; i < caseGrille.length; i++) {
  * Fonctions
  ****************************************/
 
-/****************************************
- * Sous-catégorie : Fonctions joueur
- ****************************************/
-
 // Fonction qui génère un nombre aléatoire dans une plage donnée
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/****************************************
+ * Sous-catégorie : Fonctions joueur
+ ****************************************/
+
 // Fonction pour afficher la fenêtre pop-up
 function ouvrirPopup() {
   const popup = document.getElementById("popup");
   popup.style.display = "block";
+  nom.focus();
+  nom.setSelectionRange(nom.value.length, nom.value.length);
 }
 
 // Fonction appelée lorsqu'on clique sur le bouton de soumission du joueur 1
 function soumettre() {
-  const nom = document.getElementById("nom").value;
-  const i = document.getElementById("personnage").value;
-  if (nom === "" || i === "") {
+  const i = selectPersonnage.value;
+  if (nom.value === "" || i === "") {
     return; // Si les champs sont vides, ne fait rien
   }
   // Crée une instance de "Joueur" pour le joueur 1
-  Joueur1 = new Joueur(nom, "J1", personnages[i]);
+  Joueur1 = new Joueur(nom.value, "J1", personnages[i]);
 
   // Désactive l'option de personnage sélectionnée pour éviter la sélection multiple
-  const selectPersonnage = document.getElementById("personnage");
   const option = selectPersonnage.options[i];
   if (!option.disabled) {
     option.disabled = true;
   }
 
-  document.getElementById("nom").value = "J2";
-  document.getElementById("personnage").value = `${
+  nom.value = "J2";
+  selectPersonnage.value = `${
     Number(i) >= i.length ? Number(i) - 1 : Number(i) + 1
   }`;
   document.getElementById("h2Joueur").innerHTML = "2";
   j1.style.display = "none";
   j2.style.display = "block";
+  document.getElementById("nom").focus();
 }
 
 // Fonction appelée lorsqu'on clique sur le bouton de soumission du joueur 2
 function soumettreJ2() {
-  const nom = document.getElementById("nom");
-  const i = document.getElementById("personnage").value;
+  const i = selectPersonnage.value;
   if (nom.value === "" || i === "") {
     return; // Si les champs sont vides, ne fait rien
   } else if (nom.value === Joueur1.nomJoueur) {
@@ -126,8 +128,6 @@ function soumettreJ2() {
   }
   // Crée une instance de "Joueur" pour le joueur 2
   Joueur2 = new Joueur(nom.value, "J2", personnages[i]);
-
-  const selectPersonnage = document.getElementById("personnage");
   const option = selectPersonnage.options[i];
 
   playerDom();

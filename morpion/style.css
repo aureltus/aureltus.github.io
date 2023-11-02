@@ -310,12 +310,14 @@ select option {
     height: 100%;
     width: 50%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   }
 
   /*nom joueur*/
   .player1:first-child,
   .player2:first-child {
-    font-size: large;
+    font-size: medium;
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: -5%;
@@ -330,6 +332,18 @@ select option {
   .player1:nth-child(3),
   .player2:nth-child(3) {
     font-size: medium;
+  }
+
+  /*phrase*/
+  .player1:nth-child(6),
+  .player2:nth-child(6) {
+    order: 2;
+  }
+
+  /*score*/
+  .player1:nth-child(7),
+  .player2:nth-child(7) {
+    order: 1;
   }
 
   /*age et description */
