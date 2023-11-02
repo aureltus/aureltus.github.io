@@ -1,12 +1,11 @@
 import { personnages } from "./personnages.js";
 
-const joueurTest = document.querySelector(".joueur_en_cours");
+const joueurAnnonce = document.querySelector(".joueur_en_cours");
 const caseGrille = document.querySelectorAll(".case");
 const player1 = document.querySelectorAll(".player1");
 const player2 = document.querySelectorAll(".player2");
 const j1 = document.getElementById("soumettre");
 const j2 = document.getElementById("soumettre2");
-let resetIsRun = false;
 
 class Joueur {
   constructor(nomJoueur, joueur, personnage) {
@@ -17,22 +16,12 @@ class Joueur {
   score = 0;
 }
 
+let resetIsRun = false;
 let Joueur1;
 let Joueur2;
-/*class Personnage {
-  constructor(nom, age, avatar, description, victoire, signe, phrase) {
-    this.nom = nom;
-    this.age = age;
-    this.avatar = avatar;
-    this.description = description;
-    this.victoire = victoire;
-    this.signe = signe;
-    this.phrase = phrase;
-  }
-}*/
-
 let joueurEnCours;
 let signeJoueurEnCours;
+let joueurIcon;
 
 ouvrirPopup();
 
@@ -85,7 +74,8 @@ function soumettreJ2() {
   playerDom();
   joueurEnCours = Joueur1.nomJoueur;
   signeJoueurEnCours = Joueur1.personnage.signe;
-  joueurTest.innerHTML = joueurEnCours;
+  joueurAnnonce.innerHTML = joueurEnCours;
+  joueurIcon = Joueur1.personnage.avatar;
 
   // Fermez la "popup"
   const popup = document.getElementById("popup");
@@ -104,8 +94,13 @@ for (let i = 0; i < caseGrille.length; i++) {
     } else {
       const spanElement = document.createElement("span");
       caseGrille[i].appendChild(spanElement);
-      //caseGrille[i].innerText = signeJoueurEnCours;
+      const imgElement = document.createElement("img");
+      caseGrille[i].appendChild(imgElement);
       spanElement.innerText = signeJoueurEnCours;
+      spanElement.classList.add("signe");
+      imgElement.classList.add("pion");
+
+      imgElement.src = joueurIcon;
     }
     checkWin();
     checkNull();
@@ -143,8 +138,8 @@ function checkWin() {
           ? Joueur1.score++
           : Joueur2.score++
       }`;
-      player1[7].innerHTML = `Score: ${Joueur1.score}`;
-      player2[7].innerHTML = `Score: ${Joueur2.score}`;
+      player1[6].innerHTML = `Score: ${Joueur1.score}`;
+      player2[6].innerHTML = `Score: ${Joueur2.score}`;
       popColor(caseGrille[a], caseGrille[b], caseGrille[c]);
       victory();
 
@@ -210,13 +205,16 @@ function checkNull() {
 }
 
 function changePlayer() {
-  signeJoueurEnCours =
-    signeJoueurEnCours === Joueur1.personnage.signe
-      ? Joueur2.personnage.signe
-      : Joueur1.personnage.signe;
-  joueurEnCours =
-    joueurEnCours === Joueur1.nomJoueur ? Joueur2.nomJoueur : Joueur1.nomJoueur;
-  joueurTest.innerHTML = joueurEnCours;
+  if (joueurEnCours === Joueur1.nomJoueur) {
+    joueurEnCours = Joueur2.nomJoueur;
+    signeJoueurEnCours = Joueur2.personnage.signe;
+    joueurIcon = Joueur2.personnage.avatar;
+  } else {
+    joueurEnCours = Joueur1.nomJoueur;
+    signeJoueurEnCours = Joueur1.personnage.signe;
+    joueurIcon = Joueur1.personnage.avatar;
+  }
+  joueurAnnonce.innerHTML = joueurEnCours;
 }
 
 function resetGrille() {
@@ -233,8 +231,7 @@ function playerDom() {
   player1[3].innerHTML = `${Joueur1.personnage.age} ans`;
   player1[4].innerHTML = `${Joueur1.personnage.description}`;
   player1[5].innerHTML = `${Joueur1.personnage.phrase}`;
-  player1[6].innerHTML = `Signe: ${Joueur1.personnage.signe}`;
-  player1[7].innerHTML = `Score: ${Joueur1.score}`;
+  player1[6].innerHTML = `Score: ${Joueur1.score}`;
 
   player2[0].innerHTML = `${Joueur2.nomJoueur}`;
   player2[1].src = `${Joueur2.personnage.avatar}`;
@@ -242,8 +239,7 @@ function playerDom() {
   player2[3].innerHTML = `${Joueur2.personnage.age} ans`;
   player2[4].innerHTML = `${Joueur2.personnage.description}`;
   player2[5].innerHTML = `${Joueur2.personnage.phrase}`;
-  player2[6].innerHTML = `Signe: ${Joueur2.personnage.signe}`;
-  player2[7].innerHTML = `Score: ${Joueur2.score}`;
+  player2[6].innerHTML = `Score: ${Joueur2.score}`;
 }
 
 function victory(a) {
