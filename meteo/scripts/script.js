@@ -96,10 +96,10 @@ function wallpaper(id) {
   } else if (id >= 801 && id <= 804) {
     wallpaper.style.background = "url(images/cloud.jpg)";
   }
-  wallpaper.style.backgroundRepeat = "no-repeat";
-  wallpaper.style.backgroundPosition = "center";
-  wallpaper.style.backgroundSize = "100% 100%";
-  wallpaper.style.backgroundAttachment = "fixed";
+  // wallpaper.style.backgroundRepeat = "no-repeat";
+  // wallpaper.style.backgroundPosition = "center";
+  // wallpaper.style.backgroundSize = "100% 100%";
+  // wallpaper.style.backgroundAttachment = "fixed";
 }
 
 function textError(message) {

@@ -1,3 +1,14 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: tan;
+  margin: 4% 0% 4% 0%;
+}
+
+/****************************************
+ * Erreur
+ ****************************************/
+
 .error {
   height: auto;
   width: auto;
@@ -13,12 +24,9 @@
   display: none;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  background-color: tan;
-  margin: 4% 0% 4% 0%;
-}
+/****************************************
+ * Main
+ ****************************************/
 
 .wrapper {
   display: flex;
@@ -43,6 +51,10 @@ header {
   flex-direction: row;
 }
 
+/****************************************
+ * Zone à gauche
+ ****************************************/
+
 .weather-part1 {
   display: flex;
   height: 25em;
@@ -61,30 +73,10 @@ header {
   margin: 0.5em;
   background-color: rgba(31, 38, 135, 0.87);
 }
+
 .icon:hover,
 #weatherIcon:hover {
-  /*transform: scale(1.2);*/
   animation: pulse 1.6s infinite;
-  /*transition: 0.5s;*/
-}
-
-@keyframes pulse {
-  /*0%{transform: scale(1);}*/
-  90% {
-    transform: scale(1);
-  }
-  91% {
-    transform: scale(1.2);
-  }
-  92% {
-    transform: scale(1.1);
-  }
-  93% {
-    transform: scale(0.9);
-  }
-  94% {
-    transform: scale(1);
-  }
 }
 
 .weather,
@@ -97,6 +89,10 @@ header {
 .location {
   margin-bottom: 2em;
 }
+
+/****************************************
+ * Zone à droite
+ ****************************************/
 
 .weather-part2 {
   width: 20em;
@@ -112,45 +108,6 @@ header {
 .line {
   font-size: 1.2em;
   border-bottom: 1px solid #ffffff30;
-}
-
-.line_3h,
-.line_6h,
-.line_9h,
-.line_12h,
-.line_15h {
-  display: none;
-}
-
-.line_wind {
-  border-bottom: none;
-  flex-direction: row;
-  display: flex;
-}
-
-.weapper_wind {
-  flex-direction: column;
-  align-content: flex-start;
-}
-
-.line_15h {
-  border-bottom: none;
-}
-
-.line_feels,
-.line_3h {
-  margin-top: 1.5em;
-}
-
-#windArrow {
-  margin-left: 5%;
-  height: 2em;
-  width: 2em;
-  display: block;
-}
-
-p {
-  color: lightslategray;
 }
 
 .icon {
@@ -170,6 +127,57 @@ p {
 .description {
   font-size: 0.9em;
 }
+
+p {
+  color: lightslategray;
+}
+
+/****************************************
+ * Sous-catégorie : Info instant T 
+ ****************************************/
+
+.line_wind {
+  border-bottom: none;
+  flex-direction: row;
+  display: flex;
+}
+
+.weapper_wind {
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+#windArrow {
+  margin-left: 5%;
+  height: 2em;
+  width: 2em;
+  display: block;
+}
+
+/****************************************
+ * Sous-catégorie : Forecast
+ ****************************************/
+
+.line_3h,
+.line_6h,
+.line_9h,
+.line_12h,
+.line_15h {
+  display: none;
+}
+
+.line_15h {
+  border-bottom: none;
+}
+
+.line_feels,
+.line_3h {
+  margin-top: 1.5em;
+}
+
+/****************************************
+ * écran entre 580 et 720px
+ ****************************************/
 
 @media screen and (max-width: 720px) {
   .location {
@@ -204,6 +212,10 @@ p {
     width: 16em;
   }
 }
+
+/****************************************
+ * écran entre 340 et 580
+ ****************************************/
 
 @media screen and (max-width: 580px) {
   .block {
@@ -257,6 +269,10 @@ p {
   }
 }
 
+/****************************************
+ * écran inferieur à 340px
+ ****************************************/
+
 @media screen and (max-width: 340px) {
   .wrapper {
     min-width: 12.5em;
@@ -284,5 +300,27 @@ p {
 
   .line {
     font-size: 0.8em;
+  }
+}
+
+/****************************************
+ * Animation
+ ****************************************/
+
+@keyframes pulse {
+  90% {
+    transform: scale(1);
+  }
+  91% {
+    transform: scale(1.2);
+  }
+  92% {
+    transform: scale(1.1);
+  }
+  93% {
+    transform: scale(0.9);
+  }
+  94% {
+    transform: scale(1);
   }
 }

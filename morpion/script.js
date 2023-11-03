@@ -271,6 +271,7 @@ function popAvatar(a, b, c) {
   );
 }
 
+// Fonction pour afficher une animation lors de l'égalité
 function popReduce() {
   resetIsRun = true;
   caseGrille.forEach((element) => {
@@ -290,7 +291,6 @@ function popReduce() {
 function victory(a) {
   const visible = document.querySelector(".isFinish");
   const avatar = document.getElementById("icon");
-  //const text = document.getElementById("vic");
   const name = document.getElementById("namePerso");
   if (a === 1) {
     // Si 'a' est égal à 1, cela signifie qu'il y a égalité (personne n'a gagné)
@@ -335,7 +335,8 @@ function resetGrille() {
 function typeText(text) {
   let index = 0;
   const textContainer = document.getElementById("vic");
-  textContainer.textContent = "";
+  textContainer.textContent = ""; // Efface le contenu actuel
+  // Initialise un intervalle pour ajouter le texte caractère par caractère.
   const intervalId = setInterval(function () {
     if (index < text.length) {
       textContainer.textContent += text.charAt(index);
