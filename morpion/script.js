@@ -14,6 +14,7 @@ const player1 = document.querySelectorAll(".player1");
 const player2 = document.querySelectorAll(".player2");
 const j1 = document.getElementById("soumettre");
 const j2 = document.getElementById("soumettre2");
+const timeDef = 5000; //durée par defaut
 
 // Définit une classe "Joueur" pour représenter les joueurs du jeu
 class Joueur {
@@ -90,7 +91,7 @@ function ouvrirPopup() {
   const popup = document.getElementById("popup");
   popup.style.display = "block";
   nom.focus();
-  nom.setSelectionRange(nom.value.length, nom.value.length);
+  nom.setSelectionRange(0, nom.value.length);
 }
 
 // Fonction appelée lorsqu'on clique sur le bouton de soumission du joueur 1
@@ -115,7 +116,8 @@ function soumettre() {
   document.getElementById("h2Joueur").innerHTML = "2";
   j1.style.display = "none";
   j2.style.display = "block";
-  document.getElementById("nom").focus();
+  nom.focus();
+  nom.setSelectionRange(0, nom.value.length);
 }
 
 // Fonction appelée lorsqu'on clique sur le bouton de soumission du joueur 2
@@ -224,7 +226,7 @@ function checkWin() {
       victory();
 
       // Attend quelques secondes, puis réinitialise la grille
-      setTimeout(() => resetGrille(), 5000);
+      setTimeout(() => resetGrille(), timeDef);
       return true;
     }
   }
@@ -250,7 +252,7 @@ function checkNull() {
     // Applique une animation visuelle pour indiquer l'égalité
     popReduce();
     victory(1); // Affiche un message d'égalité
-    setTimeout(() => resetGrille(), 5000); // Réinitialise la grille après quelques secondes
+    setTimeout(() => resetGrille(), timeDef); // Réinitialise la grille après quelques secondes
   }
 }
 
@@ -267,7 +269,7 @@ function popAvatar(a, b, c) {
       b.classList.remove("pop"),
       c.classList.remove("pop")
     ),
-    5000
+    timeDef
   );
 }
 
@@ -284,7 +286,7 @@ function popReduce() {
         element.classList.remove("popReduce");
       })
     ),
-    5000
+    timeDef
   );
 }
 
@@ -321,7 +323,7 @@ function victory(a) {
     }
   }
   visible.style.display = "flex";
-  setTimeout(() => (visible.style.display = "none"), 5000);
+  setTimeout(() => (visible.style.display = "none"), timeDef);
 }
 
 // Fonction pour réinitialiser la grille

@@ -271,6 +271,21 @@ const personnages = [
     signe: "Ca",
     phrase: "À la conquête de l'univers",
   },
+  {
+    nom: "Roxy Miguardia",
+    age: 26,
+    avatar: "./avatar/roxy.jpg",
+    description: "magicienne talentueuse et charismatique",
+    victoire: [
+      "La magie embrase la victoire une fois de plus !",
+      "Mon pouvoir magique est une force inarrêtable !",
+      "La magie triomphe comme une étoile brillante dans la nuit !",
+      "Une victoire digne d'une magicienne éclairée par la magie !",
+      "Le spectacle continue avec la magie à mes côtés !",
+    ],
+    signe: "R",
+    phrase: "Que la magie soit avec moi.",
+  },
   // Ajoutez d'autres personnages ici
 ];
 
