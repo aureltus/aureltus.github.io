@@ -173,11 +173,11 @@ h1 {
 }
 
 .pop img {
-  animation: pulse 3s infinite;
+  animation: pulse 5s infinite;
 }
 
 .popReduce img {
-  animation: reduce 3.5s ease;
+  animation: reduce 5.5s ease;
 }
 
 /****************************************
@@ -334,12 +334,13 @@ select option {
   .player1:nth-child(3),
   .player2:nth-child(3) {
     font-size: medium;
+    order: 2;
   }
 
   /*phrase*/
   .player1:nth-child(6),
   .player2:nth-child(6) {
-    order: 2;
+    order: 3;
   }
 
   /*score*/

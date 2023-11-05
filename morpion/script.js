@@ -224,7 +224,7 @@ function checkWin() {
       victory();
 
       // Attend quelques secondes, puis réinitialise la grille
-      setTimeout(() => resetGrille(), 3000);
+      setTimeout(() => resetGrille(), 5000);
       return true;
     }
   }
@@ -250,7 +250,7 @@ function checkNull() {
     // Applique une animation visuelle pour indiquer l'égalité
     popReduce();
     victory(1); // Affiche un message d'égalité
-    setTimeout(() => resetGrille(), 3000); // Réinitialise la grille après quelques secondes
+    setTimeout(() => resetGrille(), 5000); // Réinitialise la grille après quelques secondes
   }
 }
 
@@ -267,7 +267,7 @@ function popAvatar(a, b, c) {
       b.classList.remove("pop"),
       c.classList.remove("pop")
     ),
-    3000
+    5000
   );
 }
 
@@ -284,7 +284,7 @@ function popReduce() {
         element.classList.remove("popReduce");
       })
     ),
-    3000
+    5000
   );
 }
 
@@ -321,7 +321,7 @@ function victory(a) {
     }
   }
   visible.style.display = "flex";
-  setTimeout(() => (visible.style.display = "none"), 3000);
+  setTimeout(() => (visible.style.display = "none"), 5000);
 }
 
 // Fonction pour réinitialiser la grille
