@@ -3,7 +3,7 @@
  ****************************************/
 
 // Importe les données de personnages depuis un fichier externe
-import { personnages } from "./personnages.js";
+import { personnages, phraseMJ } from "./personnages.js";
 
 // Sélectionne des éléments HTML par leur classe ou ID et les stocke dans des variables
 const joueurAnnonce = document.querySelector(".joueur_en_cours");
@@ -14,6 +14,7 @@ const player1 = document.querySelectorAll(".player1");
 const player2 = document.querySelectorAll(".player2");
 const j1 = document.getElementById("soumettre");
 const j2 = document.getElementById("soumettre2");
+const box = document.querySelector(".isFinish");
 const timeDef = 5000; //durée par defaut
 
 // Définit une classe "Joueur" pour représenter les joueurs du jeu
@@ -251,8 +252,8 @@ function checkNull() {
   if (!auMoinsUneCaseEstVide) {
     // Applique une animation visuelle pour indiquer l'égalité
     popReduce();
-    victory(1); // Affiche un message d'égalité
     setTimeout(() => resetGrille(), timeDef); // Réinitialise la grille après quelques secondes
+    victory(1); // Affiche un message d'égalité
   }
 }
 
@@ -291,16 +292,13 @@ function popReduce() {
 }
 
 function victory(a) {
-  const visible = document.querySelector(".isFinish");
   const avatar = document.getElementById("icon");
   const name = document.getElementById("namePerso");
   if (a === 1) {
     // Si 'a' est égal à 1, cela signifie qu'il y a égalité (personne n'a gagné)
     avatar.src = "./avatar/mj.jpg";
     name.innerText = `MJ :`;
-    /*text.innerText =*/ typeText(
-      "Aucun des deux joueurs n'a réussi à prendre l'avantage"
-    );
+    typeText(phraseMJ[getRandomNumber(0, phraseMJ.length - 1)]);
   } else {
     if (joueurEnCours === Joueur1.nomJoueur) {
       // Si le joueur en cours est le joueur 1
@@ -322,8 +320,8 @@ function victory(a) {
       ); // Affiche un message de victoire aléatoire du joueur 2
     }
   }
-  visible.style.display = "flex";
-  setTimeout(() => (visible.style.display = "none"), timeDef);
+  box.style.display = "flex";
+  setTimeout(() => (box.style.display = "none"), timeDef);
 }
 
 // Fonction pour réinitialiser la grille
@@ -337,15 +335,33 @@ function resetGrille() {
 function typeText(text) {
   let index = 0;
   const textContainer = document.getElementById("vic");
+  box.style.whiteSpace = "nowrap"; //initialiser condition de départ
   textContainer.textContent = ""; // Efface le contenu actuel
   // Initialise un intervalle pour ajouter le texte caractère par caractère.
+
   const intervalId = setInterval(function () {
     if (index < text.length) {
       textContainer.textContent += text.charAt(index);
       index++;
+      if (box.style.whiteSpace === "nowrap") {
+        wrapOrNot(); //seulement quand le texte est plus petit que la box
+      }
     } else {
       clearInterval(intervalId); // Arrêtez l'animation lorsque tout le texte est affiché.
     }
   }, 30); // Vitesse de frappe (en millisecondes)
+}
+
+function wrapOrNot() {
+  const textSize = document.getElementById("vic").offsetWidth;
+  const imgSize = document.getElementById("icon").offsetWidth;
+
+  if (textSize + (4 / 3) * imgSize >= box.offsetWidth) {
+    box.style.whiteSpace = "wrap";
+    box.style.width = "80%";
+  } else {
+    box.style.whiteSpace = "nowrap";
+    box.style.width = "";
+  }
 }
 /********************************************************************/
