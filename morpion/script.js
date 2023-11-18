@@ -17,6 +17,8 @@ const j2 = document.getElementById("soumettre2");
 const box = document.querySelector(".isFinish");
 const timeDef = 5000; //durée par defaut
 
+let tableauGrilleDeJeu = ["", "", "", "", "", "", "", "", ""];
+
 // Définit une classe "Joueur" pour représenter les joueurs du jeu
 class Joueur {
   constructor(nomJoueur, joueur, personnage) {
@@ -51,20 +53,13 @@ for (let i = 0; i < caseGrille.length; i++) {
   caseGrille[i].addEventListener("click", () => {
     if (resetIsRun === true) {
       return; // Si la réinitialisation est en cours, ne fait rien
-    } else if (
-      caseGrille[i].innerText === Joueur1.personnage.signe ||
-      caseGrille[i].innerText === Joueur2.personnage.signe
-    ) {
+    } else if (caseGrille[i].childElementCount !== 0) {
       return; // Si la case est déjà occupée, ne fait rien
     } else {
-      // Crée un élément span et une image dans la case
-      const spanElement = document.createElement("span");
-      caseGrille[i].appendChild(spanElement);
       const imgElement = document.createElement("img");
       caseGrille[i].appendChild(imgElement);
-      spanElement.innerText = signeJoueurEnCours;
-      spanElement.classList.add("signe");
       imgElement.classList.add("pion");
+      tableauGrilleDeJeu[i] = signeJoueurEnCours;
 
       imgElement.src = joueurIcon;
     }
@@ -182,6 +177,7 @@ function changePlayer() {
     joueurIcon = Joueur1.personnage.avatar;
   }
   joueurAnnonce.innerHTML = joueurEnCours;
+  console.log(tableauGrilleDeJeu);
 }
 
 /****************************************
@@ -209,9 +205,9 @@ function checkWin() {
 
     // Vérification si les cases correspondantes du tableau "caseGrille" contiennent le symbole du joueur en cours.
     if (
-      caseGrille[a].innerText === signeJoueurEnCours &&
-      caseGrille[b].innerText === signeJoueurEnCours &&
-      caseGrille[c].innerText === signeJoueurEnCours
+      tableauGrilleDeJeu[a] === signeJoueurEnCours &&
+      tableauGrilleDeJeu[b] === signeJoueurEnCours &&
+      tableauGrilleDeJeu[c] === signeJoueurEnCours
     ) {
       // Si les trois cases de la ligne sont marquées par le joueur en cours, cela signifie que le joueur a gagné.
       `${
@@ -240,11 +236,11 @@ function checkNull() {
   if (resetIsRun) {
     return; // Si la réinitialisation est en cours, ne fait rien
   }
-  let auMoinsUneCaseEstVide = false;
-  caseGrille.forEach((element) => {
-    const contenu = element.textContent.trim(); // Utilisez trim() pour supprimer les espaces vides éventuels autour du contenu.
 
-    if (contenu === "") {
+  let auMoinsUneCaseEstVide = false;
+
+  tableauGrilleDeJeu.forEach((element) => {
+    if (element === "") {
       auMoinsUneCaseEstVide = true;
     }
   });
@@ -328,8 +324,10 @@ function victory(a) {
 function resetGrille() {
   caseGrille.forEach((element) => {
     element.innerText = "";
-    element.removeChild;
   });
+  for (let i = 0; i < tableauGrilleDeJeu.length; i++) {
+    tableauGrilleDeJeu[i] = "";
+  }
 }
 
 function typeText(text) {
@@ -365,3 +363,14 @@ function wrapOrNot() {
   }
 }
 /********************************************************************/
+
+function createArray() {
+  let i = 0;
+  for (const element of caseGrille) {
+    let temp = element.querySelector("span");
+    tableauGrilleDeJeu[i] = i;
+    i++;
+    // console.log(temp.innerText);
+  }
+  console.log(tableauGrilleDeJeu);
+}
