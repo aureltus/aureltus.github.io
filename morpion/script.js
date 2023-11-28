@@ -118,7 +118,7 @@ function soumettre() {
   j2.style.display = "block";
   nom.focus();
   nom.setSelectionRange(0, nom.value.length);
-  document.getElementById("activeIADiv").style.display = "block";
+  document.getElementById("activeIADiv").style.display = "flex";
 }
 
 // Fonction appelée lorsqu'on clique sur le bouton de soumission du joueur 2
