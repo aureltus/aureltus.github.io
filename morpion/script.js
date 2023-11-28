@@ -15,9 +15,6 @@ const player2 = document.querySelectorAll(".player2");
 const j1 = document.getElementById("soumettre");
 const j2 = document.getElementById("soumettre2");
 const box = document.querySelector(".isFinish");
-const timeDef = 5000; //durée par defaut
-
-let tableauGrilleDeJeu = ["", "", "", "", "", "", "", "", ""];
 
 // Définit une classe "Joueur" pour représenter les joueurs du jeu
 class Joueur {
@@ -36,6 +33,11 @@ let Joueur2;
 let joueurEnCours; // Le joueur actif en cours
 let signeJoueurEnCours; // Le symbole du joueur actif en cours
 let joueurIcon; // L'avatar du joueur actif en cours
+let tableauGrilleDeJeu = ["", "", "", "", "", "", "", "", ""];
+const timeDef = 5000; //durée par defaut
+let difficulty;
+let iaPlay = false;
+let IsIAActived = false;
 
 // Affiche une fenêtre pop-up au début du jeu
 ouvrirPopup();
@@ -51,7 +53,7 @@ j2.addEventListener("click", soumettreJ2);
 // Boucle pour ajouter des écouteurs de clic aux cases de la grille
 for (let i = 0; i < caseGrille.length; i++) {
   caseGrille[i].addEventListener("click", () => {
-    if (resetIsRun === true) {
+    if (resetIsRun || iaPlay) {
       return; // Si la réinitialisation est en cours, ne fait rien
     } else if (caseGrille[i].childElementCount !== 0) {
       return; // Si la case est déjà occupée, ne fait rien
@@ -60,12 +62,14 @@ for (let i = 0; i < caseGrille.length; i++) {
       caseGrille[i].appendChild(imgElement);
       imgElement.classList.add("pion");
       tableauGrilleDeJeu[i] = signeJoueurEnCours;
-
       imgElement.src = joueurIcon;
     }
     checkWin(); //verifier victoire
     checkNull(); //vérifier égalité
     changePlayer(); //changer joueur
+    if (IsIAActived) {
+      ia();
+    }
   });
 }
 
@@ -114,6 +118,7 @@ function soumettre() {
   j2.style.display = "block";
   nom.focus();
   nom.setSelectionRange(0, nom.value.length);
+  document.getElementById("activeIADiv").style.display = "block";
 }
 
 // Fonction appelée lorsqu'on clique sur le bouton de soumission du joueur 2
@@ -138,6 +143,13 @@ function soumettreJ2() {
   // Récupère l'avatar du joueur 1 pour le pion
   joueurIcon = Joueur1.personnage.avatar;
 
+  const choixHumain = document.getElementsByName("LevelIA");
+  for (let index = 0; index < choixHumain.length; index++) {
+    if (choixHumain[index].checked) {
+      difficulty = choixHumain[index].value;
+      break;
+    }
+  }
   // Fermez la "popup"
   const popup = document.getElementById("popup");
   popup.style.display = "none";
@@ -177,7 +189,6 @@ function changePlayer() {
     joueurIcon = Joueur1.personnage.avatar;
   }
   joueurAnnonce.innerHTML = joueurEnCours;
-  console.log(tableauGrilleDeJeu);
 }
 
 /****************************************
@@ -328,6 +339,10 @@ function resetGrille() {
   for (let i = 0; i < tableauGrilleDeJeu.length; i++) {
     tableauGrilleDeJeu[i] = "";
   }
+
+  if (joueurEnCours === Joueur2.nomJoueur && IsIAActived) {
+    ia();
+  }
 }
 
 function typeText(text) {
@@ -362,15 +377,157 @@ function wrapOrNot() {
     box.style.width = "";
   }
 }
-/********************************************************************/
 
-function createArray() {
-  let i = 0;
-  for (const element of caseGrille) {
-    let temp = element.querySelector("span");
-    tableauGrilleDeJeu[i] = i;
-    i++;
-    // console.log(temp.innerText);
+/****************************************
+ * IA
+ ****************************************/
+
+function ia() {
+  //le joueur a les O
+  //l'Ia a les X
+  if (joueurEnCours === Joueur1.nomJoueur || resetIsRun === true) {
+    return;
   }
-  console.log(tableauGrilleDeJeu);
+  iaPlay = true;
+  setTimeout(() => {
+    //copie les valeurs de la grille de jeu dans un nouveau tableau
+    let arraySimulate = tableauGrilleDeJeu.map((cell) => {
+      if (cell === signeJoueurEnCours) {
+        return "X"; //converti le signe de l'ia
+      } else if (cell !== "") {
+        return "O"; //converti le signe du joueur
+      } else {
+        return "";
+      }
+    });
+    const bestMove = findBestMove(arraySimulate);
+    console.log("Meilleur mouvement:", bestMove + 1);
+    pionIA(bestMove);
+
+    checkWin();
+    checkNull();
+    changePlayer();
+
+    iaPlay = false;
+  }, 1500);
 }
+
+function minimax(board, depth, isMaximizing) {
+  const scores = {
+    X: 1,
+    O: -1,
+    tie: 0,
+  };
+
+  // Vérifier si le jeu est terminé
+  const winner = checkWinner(board);
+  if (winner) {
+    return scores[winner];
+  }
+
+  // Si la profondeur maximale est atteinte, retourner 0 (égalité)
+  if (depth === 0) {
+    return scores.tie;
+  }
+
+  // Récupérer les indices des cases vides
+  const emptyIndices = getEmptyIndices(board);
+
+  // Maximiser ou minimiser en fonction du joueur en cours
+  if (isMaximizing) {
+    let bestScore = -Infinity;
+    for (const index of emptyIndices) {
+      board[index] = "X";
+      const score = minimax(board, depth - 1, false);
+      board[index] = ""; // Annuler le mouvement
+      bestScore = Math.max(score, bestScore);
+    }
+    return bestScore;
+  } else {
+    let bestScore = Infinity;
+    for (const index of emptyIndices) {
+      board[index] = "O";
+      const score = minimax(board, depth - 1, true);
+      board[index] = ""; // Annuler le mouvement
+      bestScore = Math.min(score, bestScore);
+    }
+    return bestScore;
+  }
+}
+
+function getEmptyIndices(board) {
+  return board.reduce((indices, cell, index) => {
+    if (cell === "") {
+      indices.push(index);
+    }
+    return indices;
+  }, []);
+}
+
+function checkWinner(board) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  for (const line of lines) {
+    const [a, b, c] = line;
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      return board[a];
+    }
+  }
+
+  if (board.every((cell) => cell !== "")) {
+    return "tie"; // Égalité
+  }
+
+  return null; // Aucun gagnant
+}
+
+function findBestMove(board) {
+  let bestScore = -Infinity;
+  let bestMove;
+
+  const emptyIndices = getEmptyIndices(board);
+
+  for (const index of emptyIndices) {
+    board[index] = "X";
+    const score = minimax(board, difficulty, false); // Profondeur de recherche arbitraire
+    board[index] = ""; // Annuler le mouvement
+    if (score > bestScore) {
+      bestScore = score;
+      bestMove = index;
+    }
+  }
+
+  return bestMove;
+}
+
+function pionIA(i) {
+  const imgElement = document.createElement("img");
+  caseGrille[i].appendChild(imgElement);
+  imgElement.classList.add("pion");
+  tableauGrilleDeJeu[i] = signeJoueurEnCours;
+  imgElement.src = joueurIcon;
+}
+
+const iaCheckbox = document.getElementById("activeIA");
+const difficultyChoise = document.getElementById("dificulty");
+
+iaCheckbox.addEventListener("change", () => {
+  if (iaCheckbox.checked) {
+    difficultyChoise.style.display = "flex";
+    IsIAActived = true;
+  } else {
+    difficultyChoise.style.display = "none";
+    IsIAActived = false;
+  }
+});
+
+/************************************************************************/
