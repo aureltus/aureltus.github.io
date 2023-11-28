@@ -401,7 +401,6 @@ function ia() {
       }
     });
     const bestMove = findBestMove(arraySimulate);
-    console.log("Meilleur mouvement:", bestMove + 1);
     pionIA(bestMove);
 
     checkWin();
