@@ -499,6 +499,14 @@ function findBestMove(board) {
     board[index] = "X";
     const score = minimax(board, difficulty, false); // Profondeur de recherche arbitraire
     board[index] = ""; // Annuler le mouvement
+
+    if (score === bestScore) {
+      console.log("egalité");
+
+      if (Math.random() < 1.2 / (index + 1)) {
+        bestMove = index;
+      }
+    }
     if (score > bestScore) {
       bestScore = score;
       bestMove = index;
