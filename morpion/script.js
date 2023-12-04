@@ -501,14 +501,15 @@ function findBestMove(board) {
     board[index] = ""; // Annuler le mouvement
 
     if (score === bestScore) {
-      console.log("egalité");
-
       if (Math.random() < 1.2 / (index + 1)) {
         bestMove = index;
       }
     }
     if (score > bestScore) {
       bestScore = score;
+      bestMove = index;
+    }
+    if (Math.random() < 0.3 / difficulty) {
       bestMove = index;
     }
   }
