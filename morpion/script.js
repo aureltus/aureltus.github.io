@@ -509,7 +509,7 @@ function findBestMove(board) {
       bestScore = score;
       bestMove = index;
     }
-    if (Math.random() < 0.3 / difficulty) {
+    if (Math.random() < 0.1 / difficulty) {
       bestMove = index;
     }
   }
