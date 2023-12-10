@@ -19,4 +19,4 @@ setInterval(() => {
   } else {
     switchLine(2); // affiche les previsions
   }
-}, 10000);
+}, 1000);

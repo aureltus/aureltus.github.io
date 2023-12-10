@@ -122,6 +122,7 @@ header {
 .anime {
   opacity: 0%;
   transition: 0.5s;
+  transform: translateY(25px);
 }
 
 .description {
@@ -154,6 +155,10 @@ p {
   display: block;
 }
 
+.displayNone {
+  display: none;
+}
+
 /****************************************
  * Sous-catégorie : Forecast
  ****************************************/
@@ -173,6 +178,10 @@ p {
 .line_feels,
 .line_3h {
   margin-top: 1.5em;
+}
+
+.displayBlock {
+  display: block;
 }
 
 /****************************************
