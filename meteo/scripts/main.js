@@ -12,11 +12,6 @@ setInterval(() => {
   fetchCityServerPrev();
 }, 3600000);
 
-let counter = 1;
 setInterval(() => {
-  if (counter++ % 2) {
-    switchLine(1); // affiche les donnees actuelles
-  } else {
-    switchLine(2); // affiche les previsions
-  }
-}, 1000);
+  switchLine(); //switch entre prevision et meteo actuelle
+}, 10000);

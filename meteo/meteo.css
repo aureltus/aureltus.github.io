@@ -163,14 +163,6 @@ p {
  * Sous-catégorie : Forecast
  ****************************************/
 
-.line_3h,
-.line_6h,
-.line_9h,
-.line_12h,
-.line_15h {
-  display: none;
-}
-
 .line_15h {
   border-bottom: none;
 }
